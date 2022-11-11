@@ -38,8 +38,8 @@ public class JFlogin1 extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jPfondo = new javax.swing.JPanel();
-        jBIngresar = new javax.swing.JButton();
         jBcerrar = new javax.swing.JButton();
+        jBIngresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         Lfondo = new javax.swing.JLabel();
@@ -85,21 +85,10 @@ public class JFlogin1 extends javax.swing.JFrame {
         jPfondo.setForeground(new java.awt.Color(255, 255, 255));
         jPfondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jBIngresar.setBackground(new java.awt.Color(210, 230, 237));
-        jBIngresar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jBIngresar.setText("INGRESAR");
-        jBIngresar.setBorder(null);
-        jBIngresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBIngresarActionPerformed(evt);
-            }
-        });
-        jPfondo.add(jBIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 418, 120, 40));
-
-        jBcerrar.setBackground(new java.awt.Color(255, 255, 255));
         jBcerrar.setForeground(new java.awt.Color(255, 255, 255));
-        jBcerrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Downloads\\delete_96690.png")); // NOI18N
+        jBcerrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\boton.png")); // NOI18N
         jBcerrar.setBorder(null);
+        jBcerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBcerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jBcerrarMouseClicked(evt);
@@ -116,17 +105,29 @@ public class JFlogin1 extends javax.swing.JFrame {
                 jBcerrarActionPerformed(evt);
             }
         });
-        jPfondo.add(jBcerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 30));
+        jPfondo.add(jBcerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 30));
+        jBcerrar.getAccessibleContext().setAccessibleParent(this);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\MVC\\InvdrogueriaMunich\\src\\main\\java\\img\\medical-49_icon-icons.com_73913.png")); // NOI18N
+        jBIngresar.setBackground(new java.awt.Color(210, 230, 237));
+        jBIngresar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jBIngresar.setText("INGRESAR");
+        jBIngresar.setBorder(null);
+        jBIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBIngresarActionPerformed(evt);
+            }
+        });
+        jPfondo.add(jBIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 418, 120, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\medical-49_icon-icons.com_73913.png")); // NOI18N
         jPfondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, 140, 180));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel4.setText("DROGUERIA MUNICH");
         jPfondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 250, 280, 60));
 
-        Lfondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\MVC\\InvdrogueriaMunich\\src\\main\\java\\img\\Medico.jpg")); // NOI18N
-        jPfondo.add(Lfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 380, 550));
+        Lfondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\Medico.jpg")); // NOI18N
+        jPfondo.add(Lfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 390, 560));
 
         getContentPane().add(jPfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, -1));
 

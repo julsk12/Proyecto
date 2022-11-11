@@ -27,83 +27,95 @@ public class JFinicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jfondo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jBgeneral = new javax.swing.JButton();
+        jBventas = new javax.swing.JButton();
+        JBproductos = new javax.swing.JButton();
+        jBproveedores = new javax.swing.JButton();
+        jfondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 221, -1));
-
-        jButton2.setText("jButton1");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 221, -1));
-
-        jButton3.setText("jButton1");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 221, -1));
-
-        jButton4.setText("jButton1");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 221, -1));
-        getContentPane().add(jfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 221, 520));
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 770, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
-        );
+        jBgeneral.setBackground(new java.awt.Color(156, 230, 255));
+        jBgeneral.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jBgeneral.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\control-de-acceso.png")); // NOI18N
+        jBgeneral.setText("  ACCESO GENERAL");
+        jBgeneral.setBorder(null);
+        jBgeneral.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jBgeneral.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBgeneralActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBgeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 250, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 530));
+        jBventas.setBackground(new java.awt.Color(156, 230, 255));
+        jBventas.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jBventas.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\ventas.png")); // NOI18N
+        jBventas.setText("   VENTAS");
+        jBventas.setBorder(null);
+        jBventas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jBventas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBventasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 250, 50));
+
+        JBproductos.setBackground(new java.awt.Color(156, 230, 255));
+        JBproductos.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        JBproductos.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\productividad.png")); // NOI18N
+        JBproductos.setText("   PRODUCTOS");
+        JBproductos.setBorder(null);
+        JBproductos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        JBproductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBproductosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(JBproductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 250, 50));
+
+        jBproveedores.setBackground(new java.awt.Color(156, 230, 255));
+        jBproveedores.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jBproveedores.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\proveedor.png")); // NOI18N
+        jBproveedores.setText("   PROVEEDORES");
+        jBproveedores.setBorder(null);
+        jBproveedores.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jBproveedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBproveedoresActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBproveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 250, 50));
+
+        jfondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\3925ce5fd9a7c47b6bc967fa6368c072.jpg")); // NOI18N
+        jPanel1.add(jfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 600));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jBventasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBventasActionPerformed
         // TODO add your handling code here:
        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jBventasActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void JBproductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBproductosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_JBproductosActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jBproveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBproveedoresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jBproveedoresActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jBgeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBgeneralActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jBgeneralActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,10 +153,10 @@ public class JFinicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton JBproductos;
+    private javax.swing.JButton jBgeneral;
+    private javax.swing.JButton jBproveedores;
+    private javax.swing.JButton jBventas;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jfondo;
     // End of variables declaration//GEN-END:variables
