@@ -42,7 +42,7 @@ public class JFinicio extends javax.swing.JFrame {
 
         jBgeneral.setBackground(new java.awt.Color(156, 230, 255));
         jBgeneral.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jBgeneral.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\control-de-acceso.png")); // NOI18N
+        jBgeneral.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\control-de-acceso.png")); // NOI18N
         jBgeneral.setText("  ACCESO GENERAL");
         jBgeneral.setBorder(null);
         jBgeneral.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -51,11 +51,11 @@ public class JFinicio extends javax.swing.JFrame {
                 jBgeneralActionPerformed(evt);
             }
         });
-        jPanel1.add(jBgeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 250, 50));
+        jPanel1.add(jBgeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 130, 160));
 
         jBventas.setBackground(new java.awt.Color(156, 230, 255));
         jBventas.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jBventas.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\ventas.png")); // NOI18N
+        jBventas.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\ventas.png")); // NOI18N
         jBventas.setText("   VENTAS");
         jBventas.setBorder(null);
         jBventas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -64,11 +64,11 @@ public class JFinicio extends javax.swing.JFrame {
                 jBventasActionPerformed(evt);
             }
         });
-        jPanel1.add(jBventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 250, 50));
+        jPanel1.add(jBventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 130, 160));
 
         JBproductos.setBackground(new java.awt.Color(156, 230, 255));
         JBproductos.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        JBproductos.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\productividad.png")); // NOI18N
+        JBproductos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\productividad.png")); // NOI18N
         JBproductos.setText("   PRODUCTOS");
         JBproductos.setBorder(null);
         JBproductos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -77,11 +77,11 @@ public class JFinicio extends javax.swing.JFrame {
                 JBproductosActionPerformed(evt);
             }
         });
-        jPanel1.add(JBproductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 250, 50));
+        jPanel1.add(JBproductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 130, 160));
 
         jBproveedores.setBackground(new java.awt.Color(156, 230, 255));
         jBproveedores.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jBproveedores.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\proveedor.png")); // NOI18N
+        jBproveedores.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\proveedor.png")); // NOI18N
         jBproveedores.setText("   PROVEEDORES");
         jBproveedores.setBorder(null);
         jBproveedores.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -90,10 +90,10 @@ public class JFinicio extends javax.swing.JFrame {
                 jBproveedoresActionPerformed(evt);
             }
         });
-        jPanel1.add(jBproveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 250, 50));
+        jPanel1.add(jBproveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 130, 160));
 
-        jfondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\3925ce5fd9a7c47b6bc967fa6368c072.jpg")); // NOI18N
-        jPanel1.add(jfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 600));
+        jfondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\blue watercolor splash background eps10 vectors illustration.jpg")); // NOI18N
+        jPanel1.add(jfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 590));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 600));
 

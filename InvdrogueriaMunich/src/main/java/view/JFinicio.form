@@ -50,7 +50,7 @@
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SENA\Desktop\WorkSpace_SJ\Proyecto\InvdrogueriaMunich\src\main\java\img\control-de-acceso.png"/>
+              <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\control-de-acceso.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="  ACCESO GENERAL"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -63,7 +63,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="230" width="250" height="50"/>
+              <AbsoluteConstraints x="90" y="140" width="130" height="160"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -76,7 +76,7 @@
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SENA\Desktop\WorkSpace_SJ\Proyecto\InvdrogueriaMunich\src\main\java\img\ventas.png"/>
+              <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\ventas.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="   VENTAS"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -89,7 +89,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="180" width="250" height="50"/>
+              <AbsoluteConstraints x="610" y="320" width="130" height="160"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -102,7 +102,7 @@
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SENA\Desktop\WorkSpace_SJ\Proyecto\InvdrogueriaMunich\src\main\java\img\productividad.png"/>
+              <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\productividad.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="   PRODUCTOS"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -115,7 +115,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="80" width="250" height="50"/>
+              <AbsoluteConstraints x="450" y="140" width="130" height="160"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -128,7 +128,7 @@
               <Font name="Times New Roman" size="14" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SENA\Desktop\WorkSpace_SJ\Proyecto\InvdrogueriaMunich\src\main\java\img\proveedor.png"/>
+              <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\proveedor.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="   PROVEEDORES"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -141,19 +141,19 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="130" width="250" height="50"/>
+              <AbsoluteConstraints x="280" y="320" width="130" height="160"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jfondo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SENA\Desktop\WorkSpace_SJ\Proyecto\InvdrogueriaMunich\src\main\java\img\3925ce5fd9a7c47b6bc967fa6368c072.jpg"/>
+              <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\blue watercolor splash background eps10 vectors illustration.jpg"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="250" height="600"/>
+              <AbsoluteConstraints x="0" y="0" width="840" height="590"/>
             </Constraint>
           </Constraints>
         </Component>
