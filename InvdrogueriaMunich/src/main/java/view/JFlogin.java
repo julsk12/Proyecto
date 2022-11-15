@@ -34,7 +34,6 @@ public class JFlogin extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jTextPass = new javax.swing.JPasswordField();
-        jTxtUser1 = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jPfondo = new javax.swing.JPanel();
@@ -66,15 +65,6 @@ public class JFlogin extends javax.swing.JFrame {
 
         jTextPass.setBorder(null);
         getContentPane().add(jTextPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 440, 50));
-
-        jTxtUser1.setBackground(new java.awt.Color(240, 240, 240));
-        jTxtUser1.setBorder(null);
-        jTxtUser1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtUser1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTxtUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 440, 50));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 430, 10));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
@@ -137,10 +127,6 @@ public class JFlogin extends javax.swing.JFrame {
     private void jTxtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTxtUserActionPerformed
-
-    private void jTxtUser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtUser1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtUser1ActionPerformed
 
     private void jBcerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBcerrarMouseClicked
         // TODO add your handling code here:
@@ -213,6 +199,5 @@ public class JFlogin extends javax.swing.JFrame {
     public javax.swing.JSeparator jSeparator3;
     public javax.swing.JPasswordField jTextPass;
     public javax.swing.JTextField jTxtUser;
-    public javax.swing.JTextField jTxtUser1;
     // End of variables declaration//GEN-END:variables
 }

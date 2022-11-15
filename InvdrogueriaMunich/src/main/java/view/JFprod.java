@@ -29,24 +29,19 @@ public class JFprod extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jToolBar3 = new javax.swing.JToolBar();
-        jBvolver = new javax.swing.JButton();
-        jBproveedores = new javax.swing.JButton();
-        jBventas = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         JtxtIdPro = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtNombrePro = new javax.swing.JTextField();
+        JtxtNombrePro = new javax.swing.JTextField();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
         JtxtPrexCPro = new javax.swing.JTextField();
         jSeparator9 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
-        txtValorPro = new javax.swing.JTextField();
+        JtxtValorPro = new javax.swing.JTextField();
         jSeparator11 = new javax.swing.JSeparator();
         JBAñadePro = new javax.swing.JButton();
         JBEliminarPro = new javax.swing.JButton();
@@ -60,6 +55,10 @@ public class JFprod extends javax.swing.JFrame {
         Jtxtlote = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
+        jToolBar3 = new javax.swing.JToolBar();
+        jBvolver = new javax.swing.JButton();
+        jBproveedores = new javax.swing.JButton();
+        jBventas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -78,49 +77,6 @@ public class JFprod extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 460, 460));
-
-        jToolBar3.setBackground(new java.awt.Color(178, 218, 250));
-        jToolBar3.setRollover(true);
-
-        jBvolver.setBackground(new java.awt.Color(178, 218, 250));
-        jBvolver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\leftarrowsquarebuttonoutline_81094.png")); // NOI18N
-        jBvolver.setFocusable(false);
-        jBvolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jBvolver.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jBvolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBvolverActionPerformed(evt);
-            }
-        });
-        jToolBar3.add(jBvolver);
-
-        jBproveedores.setBackground(new java.awt.Color(178, 218, 250));
-        jBproveedores.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\proveedor.png")); // NOI18N
-        jBproveedores.setFocusable(false);
-        jBproveedores.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jBproveedores.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jBproveedores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBproveedoresActionPerformed(evt);
-            }
-        });
-        jToolBar3.add(jBproveedores);
-
-        jBventas.setBackground(new java.awt.Color(178, 218, 250));
-        jBventas.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\ventas.png")); // NOI18N
-        jBventas.setFocusable(false);
-        jBventas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jBventas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar3.add(jBventas);
-
-        jButton4.setBackground(new java.awt.Color(178, 218, 250));
-        jButton4.setToolTipText("");
-        jButton4.setFocusable(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar3.add(jButton4);
-
-        getContentPane().add(jToolBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 50));
 
         jPanel1.setBackground(new java.awt.Color(178, 218, 250));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -145,9 +101,9 @@ public class JFprod extends javax.swing.JFrame {
         jLabel7.setText("Nombre");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 161, -1, -1));
 
-        txtNombrePro.setBackground(new java.awt.Color(178, 218, 250));
-        txtNombrePro.setBorder(null);
-        jPanel1.add(txtNombrePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 184, 217, 26));
+        JtxtNombrePro.setBackground(new java.awt.Color(178, 218, 250));
+        JtxtNombrePro.setBorder(null);
+        jPanel1.add(JtxtNombrePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 184, 217, 26));
 
         jSeparator7.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
@@ -169,9 +125,9 @@ public class JFprod extends javax.swing.JFrame {
         jLabel11.setText("Valor");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 319, -1, -1));
 
-        txtValorPro.setBackground(new java.awt.Color(178, 218, 250));
-        txtValorPro.setBorder(null);
-        jPanel1.add(txtValorPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 342, 217, 26));
+        JtxtValorPro.setBackground(new java.awt.Color(178, 218, 250));
+        JtxtValorPro.setBorder(null);
+        jPanel1.add(JtxtValorPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 342, 217, 26));
 
         jSeparator11.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator11.setForeground(new java.awt.Color(0, 0, 0));
@@ -245,6 +201,42 @@ public class JFprod extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 550, 510));
 
+        jToolBar3.setBackground(new java.awt.Color(178, 218, 250));
+        jToolBar3.setRollover(true);
+
+        jBvolver.setBackground(new java.awt.Color(178, 218, 250));
+        jBvolver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\leftarrowsquarebuttonoutline_81094.png")); // NOI18N
+        jBvolver.setFocusable(false);
+        jBvolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBvolver.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBvolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBvolverActionPerformed(evt);
+            }
+        });
+        jToolBar3.add(jBvolver);
+
+        jBproveedores.setBackground(new java.awt.Color(178, 218, 250));
+        jBproveedores.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\proveedor.png")); // NOI18N
+        jBproveedores.setFocusable(false);
+        jBproveedores.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBproveedores.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBproveedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBproveedoresActionPerformed(evt);
+            }
+        });
+        jToolBar3.add(jBproveedores);
+
+        jBventas.setBackground(new java.awt.Color(178, 218, 250));
+        jBventas.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\ventas.png")); // NOI18N
+        jBventas.setFocusable(false);
+        jBventas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBventas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar3.add(jBventas);
+
+        getContentPane().add(jToolBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 50));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -298,10 +290,11 @@ public class JFprod extends javax.swing.JFrame {
     public javax.swing.JTextField JtxtCanPro;
     public javax.swing.JTextField JtxtFecha;
     public javax.swing.JTextField JtxtIdPro;
+    public javax.swing.JTextField JtxtNombrePro;
     public javax.swing.JTextField JtxtPrexCPro;
+    public javax.swing.JTextField JtxtValorPro;
     public javax.swing.JTextField Jtxtlote;
     public javax.swing.JButton jBproveedores;
-    public javax.swing.JButton jButton4;
     public javax.swing.JButton jBventas;
     public javax.swing.JButton jBvolver;
     private javax.swing.JLabel jLabel11;
@@ -323,7 +316,5 @@ public class JFprod extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
     public javax.swing.JToolBar jToolBar3;
-    public javax.swing.JTextField txtNombrePro;
-    public javax.swing.JTextField txtValorPro;
     // End of variables declaration//GEN-END:variables
 }
