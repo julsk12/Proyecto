@@ -161,15 +161,15 @@ public class crudproductos extends CtrlConnection {
         ResultSet rs = null;
         String sql = "";
         if (filtro == 1) {
-            sql = "SELECT * FROM isfarmacia.producto where proCodigo='" + buscar + "'";
+            sql = "SELECT * FROM inven_drogueriamunich.productos where id_pro='" + buscar + "'";
         } else if (filtro == 2) {
-            sql = "SELECT * FROM isfarmacia.producto where proNombre='" + buscar + "'";
+            sql = "SELECT * FROM inven_drogueriamunich.productos where nombre='" + buscar + "'";
         } else if (filtro == 3) {
-            sql = "SELECT * FROM isfarmacia.producto where proFechaVenci='" + buscar + "'";
+            sql = "SELECT * FROM inven_drogueriamunich.productos where Fecha_vencimiento='" + buscar + "'";
         } else if (filtro == 4) {
-            sql = "SELECT * FROM isfarmacia.producto where proValor='" + buscar + "'";
+            sql = "SELECT * FROM inven_drogueriamunich.productos where precioxund='" + buscar + "'";
         }else if (filtro == 5) {
-            sql = "SELECT * FROM isfarmacia.producto where proStock='" + buscar + "'";
+            sql = "SELECT * FROM inven_drogueriamunich.productos where cantidad='" + buscar + "'";
         }
 
         try {
@@ -179,13 +179,13 @@ public class crudproductos extends CtrlConnection {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                filas[0] = rs.getString("proCodigo");
-                filas[1] = rs.getString("proNombre");
-                filas[2] = rs.getString("proDescri");
-                filas[3] = rs.getString("proValor");
-                filas[4] = rs.getString("proStock");
-                filas[5] = rs.getString("proFechaVenci");
-                filas[6] = rs.getString("idProveedor");
+                filas[0] = rs.getString("id_pro");
+                filas[1] = rs.getString("nombre");
+                filas[2] = rs.getString("precioxund");
+                filas[3] = rs.getString("precioxcaja");
+                filas[4] = rs.getString("cantidad");
+                filas[5] = rs.getString("Fecha_vencimiento");
+                filas[6] = rs.getString("lote");
                 modeloProducto.addRow(filas);
             }
 
@@ -199,14 +199,14 @@ public class crudproductos extends CtrlConnection {
     }
 
     public DefaultTableModel modeloTablaProductos() {
-        String[] columnas = {"Codigo", "Nombre", "Descripción", "Valor", "Cantidad", "Fecha de vencimiento", "iPro"};
+        String[] columnas = {"Id", "Nombre", "Precio por caja", "precio", "Cantidad", "Fecha de vencimiento", "Lote"};
         String[] filas = new String[7];
         DefaultTableModel modeloProducto = new DefaultTableModel(null, columnas);
 
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String sql = "SELECT * FROM isfarmacia.producto";
+        String sql = "{call mostrarprod}";
 
         try {
 
@@ -215,13 +215,13 @@ public class crudproductos extends CtrlConnection {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                filas[0] = rs.getString("proCodigo");
-                filas[1] = rs.getString("proNombre");
-                filas[2] = rs.getString("proDescri");
-                filas[3] = rs.getString("proValor");
-                filas[4] = rs.getString("proStock");
-                filas[5] = rs.getString("proFechaVenci");
-                filas[6] = rs.getString("idProveedor");
+                filas[0] = rs.getString("id_pro");
+                filas[1] = rs.getString("nombre");
+                filas[2] = rs.getString("precioxund");
+                filas[3] = rs.getString("precioxcaja");
+                filas[4] = rs.getString("cantidad");
+                filas[5] = rs.getString("Fecha_vencimiento");
+                filas[6] = rs.getString("lote");
                 modeloProducto.addRow(filas);
             }
 
@@ -344,7 +344,6 @@ public class crudproductos extends CtrlConnection {
             frmError verror = new frmError();
             verror.setVisible(true);
             verror.setLocationRelativeTo(null);
-            verror.lbErrorDuck2.setText(e.getMessage());
         }
         return modeloIngresos;
     }

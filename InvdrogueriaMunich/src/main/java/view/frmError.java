@@ -37,7 +37,7 @@ public class frmError extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(178, 218, 250));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbError.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -51,8 +51,7 @@ public class frmError extends javax.swing.JFrame {
         jPanel1.add(lbErrorDuck2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 519, 1182, 106));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1182, 10, -1, -1));
 
-        lbErrorDuck.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
-        lbErrorDuck.setForeground(new java.awt.Color(204, 204, 204));
+        lbErrorDuck.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
         lbErrorDuck.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbErrorDuck.setText("Error .-.");
         jPanel1.add(lbErrorDuck, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, -1));
@@ -105,7 +104,7 @@ public class frmError extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbError;
     private javax.swing.JLabel lbErrorDuck;
     public javax.swing.JLabel lbErrorDuck2;
