@@ -4,8 +4,9 @@ import CRUD.crudlogin;
 import view.JFlogin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import model.ModelLogin;
+import view.JFinicio1;
 
 /**
  *
@@ -14,28 +15,22 @@ import javax.swing.JOptionPane;
 public class Ctrllogin extends crudlogin implements ActionListener {
 
     JFlogin vistalogin;
-    String usuario, contrasena;
+    JFinicio1 vistamain;
     crudlogin cl = new crudlogin();
+    ModelLogin mlogin = new ModelLogin();
 
     public Ctrllogin(JFlogin vistalogin) {
         this.vistalogin = vistalogin;
         this.vistalogin.jBIngresar.addActionListener(this);
         this.vistalogin.jBcerrar.addActionListener(this);
-        this.vistalogin.jTxtUser.addActionListener(this);
-        this.vistalogin.jTextPass.addActionListener(this);
-    }
+       }
 
-    public boolean validarNumeros(String txt) {
-        return txt.matches("^([0-9])*$");
-    }
-
+    
     public boolean validarLetras(String txt) {
         return txt.matches("[a-zA-Z]+");
     }
 
-    public boolean validarDouble(String txt) {
-        return txt.matches("^[0-9]+([.][0-9]+)?$");
-    }
+  
 
     //Limpiar Jtable
 //    public void limpiar() {
@@ -50,7 +45,6 @@ public class Ctrllogin extends crudlogin implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.vistalogin.jBIngresar) {
-
             if (vistalogin.jTxtUser.getText().equals("") && vistalogin.jTextPass.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Error, hay campos vacios, llene la informacion");
             } else if (validarLetras(vistalogin.jTxtUser.getText()) != true) {
@@ -60,10 +54,16 @@ public class Ctrllogin extends crudlogin implements ActionListener {
             } else if (vistalogin.jTextPass.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Error, el campo contraseña está vacio, llene la informacion");
             } else if (vistalogin.jTxtUser.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "Error, el campo contraseña está vacio, llene la informacion");
+                JOptionPane.showMessageDialog(null, "Error, el campo usuario está vacio, llene la informacion");
             } else {
-                cl.verificarusuario();
+                mlogin.setContrasena(vistalogin.jTextPass.getText());
+                mlogin.setUsuario(vistalogin.jTxtUser.getText());
+                if (cl.verificarusuario(mlogin)) {
+                    vistamain = new JFinicio1();
+                    vistamain.setVisible(true);
+                }
             }
         }
     }
 }
+
