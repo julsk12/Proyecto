@@ -12,7 +12,8 @@ package model;
 public class ModelLogin {
 
     private int id_usu;
-    private String usuario, contrasena;
+    private String usuario;
+    private String contrasena;
 
     public ModelLogin() {
 

@@ -55,7 +55,7 @@ public class JFinicio1 extends javax.swing.JFrame {
         JBmosvenci = new javax.swing.JButton();
         JBmosago = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jBgeneral.setBackground(new java.awt.Color(156, 230, 255));
@@ -230,6 +230,7 @@ public class JFinicio1 extends javax.swing.JFrame {
         });
 
         JBmosago.setBackground(new java.awt.Color(255, 255, 255));
+        JBmosago.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         JBmosago.setText("MOSTRAR");
         JBmosago.setBorderPainted(false);
         JBmosago.setFocusPainted(false);
@@ -390,11 +391,11 @@ public class JFinicio1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBmosago;
     public javax.swing.JButton JBmosvenci;
-    private javax.swing.JButton JBproductos;
+    public javax.swing.JButton JBproductos;
     public javax.swing.JTable JTprodago;
-    private javax.swing.JButton jBgeneral;
-    private javax.swing.JButton jBproveedores;
-    private javax.swing.JButton jBventas;
+    public javax.swing.JButton jBgeneral;
+    public javax.swing.JButton jBproveedores;
+    public javax.swing.JButton jBventas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

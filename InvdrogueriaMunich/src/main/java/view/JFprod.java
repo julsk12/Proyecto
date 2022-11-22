@@ -27,8 +27,9 @@ public class JFprod extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jBrecargar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTprod = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         JtxtIdPro = new javax.swing.JTextField();
@@ -55,15 +56,23 @@ public class JFprod extends javax.swing.JFrame {
         Jtxtlote = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
+        jBbuscar = new javax.swing.JButton();
+        jTextbuscar = new javax.swing.JTextField();
+        jSeparator12 = new javax.swing.JSeparator();
         jToolBar3 = new javax.swing.JToolBar();
         jBvolver = new javax.swing.JButton();
         jBproveedores = new javax.swing.JButton();
         jBventas = new javax.swing.JButton();
+        jBstock = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jBrecargar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\arrow_arrows_direction_loop_reload_icon_193363.png")); // NOI18N
+        jBrecargar.setBorder(null);
+        getContentPane().add(jBrecargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 470, -1, -1));
+
+        jTprod.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -74,7 +83,7 @@ public class JFprod extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(jTprod);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 460, 460));
 
@@ -83,55 +92,55 @@ public class JFprod extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel4.setText("Añadir productos");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 43, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
 
         JtxtIdPro.setBackground(new java.awt.Color(178, 218, 250));
         JtxtIdPro.setBorder(null);
-        jPanel1.add(JtxtIdPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 106, 217, 26));
+        jPanel1.add(JtxtIdPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 217, 26));
 
         jSeparator5.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 138, 217, 12));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 420, 12));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("Id");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 83, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 20));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("Nombre");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 161, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
         JtxtNombrePro.setBackground(new java.awt.Color(178, 218, 250));
         JtxtNombrePro.setBorder(null);
-        jPanel1.add(JtxtNombrePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 184, 217, 26));
+        jPanel1.add(JtxtNombrePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 217, 26));
 
         jSeparator7.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 216, 217, 12));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 217, 20));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel9.setText("Precio por caja");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 246, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         JtxtPrexCPro.setBackground(new java.awt.Color(178, 218, 250));
         JtxtPrexCPro.setBorder(null);
-        jPanel1.add(JtxtPrexCPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 269, 217, 26));
+        jPanel1.add(JtxtPrexCPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 217, 26));
 
         jSeparator9.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 301, 217, 12));
+        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 217, 12));
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel11.setText("Valor");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 319, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
         JtxtValorPro.setBackground(new java.awt.Color(178, 218, 250));
         JtxtValorPro.setBorder(null);
-        jPanel1.add(JtxtValorPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 342, 217, 26));
+        jPanel1.add(JtxtValorPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 217, 26));
 
         jSeparator11.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator11.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 374, 217, 12));
+        jPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 217, 12));
 
         JBAñadePro.setBackground(new java.awt.Color(0, 102, 153));
         JBAñadePro.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -141,7 +150,7 @@ public class JFprod extends javax.swing.JFrame {
         JBAñadePro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBAñadePro.setFocusPainted(false);
         JBAñadePro.setFocusable(false);
-        jPanel1.add(JBAñadePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 404, 157, 30));
+        jPanel1.add(JBAñadePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 157, 30));
 
         JBEliminarPro.setBackground(new java.awt.Color(0, 102, 102));
         JBEliminarPro.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -151,7 +160,7 @@ public class JFprod extends javax.swing.JFrame {
         JBEliminarPro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBEliminarPro.setFocusPainted(false);
         JBEliminarPro.setFocusable(false);
-        jPanel1.add(JBEliminarPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 404, 135, 30));
+        jPanel1.add(JBEliminarPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 135, 30));
 
         JBEditaPro.setBackground(new java.awt.Color(51, 102, 255));
         JBEditaPro.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -161,43 +170,61 @@ public class JFprod extends javax.swing.JFrame {
         JBEditaPro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBEditaPro.setFocusPainted(false);
         JBEditaPro.setFocusable(false);
-        jPanel1.add(JBEditaPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 404, 130, 30));
+        jPanel1.add(JBEditaPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 130, 30));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("Cantidad ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, -1, -1));
 
         JtxtFecha.setBackground(new java.awt.Color(178, 218, 250));
         JtxtFecha.setBorder(null);
-        jPanel1.add(JtxtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 217, 26));
+        jPanel1.add(JtxtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 217, 26));
 
         jSeparator8.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator8.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 217, 10));
+        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 217, 10));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("Fecha de vencimiento");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, -1, -1));
 
         JtxtCanPro.setBackground(new java.awt.Color(178, 218, 250));
         JtxtCanPro.setBorder(null);
-        jPanel1.add(JtxtCanPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 217, 26));
+        jPanel1.add(JtxtCanPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 217, 26));
 
         jSeparator6.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 217, 12));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 217, 10));
 
         Jtxtlote.setBackground(new java.awt.Color(178, 218, 250));
         Jtxtlote.setBorder(null);
-        jPanel1.add(Jtxtlote, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 217, 26));
+        jPanel1.add(Jtxtlote, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 217, 26));
 
         jSeparator10.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator10.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 217, 10));
+        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 217, 10));
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel12.setText("Lote");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, -1, -1));
+
+        jBbuscar.setBackground(new java.awt.Color(178, 218, 250));
+        jBbuscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\magnifier_icon-icons.com_67993.png")); // NOI18N
+        jBbuscar.setBorder(null);
+        jBbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBbuscarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        jTextbuscar.setBackground(new java.awt.Color(178, 218, 250));
+        jTextbuscar.setBorder(null);
+        jPanel1.add(jTextbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 420, 20));
+
+        jSeparator12.setBackground(new java.awt.Color(102, 153, 255));
+        jSeparator12.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 217, 12));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 550, 510));
 
@@ -235,6 +262,13 @@ public class JFprod extends javax.swing.JFrame {
         jBventas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar3.add(jBventas);
 
+        jBstock.setBackground(new java.awt.Color(178, 218, 250));
+        jBstock.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\virus_sanitizer_personal_care_products_icon_142193.png")); // NOI18N
+        jBstock.setFocusable(false);
+        jBstock.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBstock.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar3.add(jBstock);
+
         getContentPane().add(jToolBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 50));
 
         pack();
@@ -247,6 +281,10 @@ public class JFprod extends javax.swing.JFrame {
     private void jBproveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBproveedoresActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBproveedoresActionPerformed
+
+    private void jBbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBbuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,7 +332,10 @@ public class JFprod extends javax.swing.JFrame {
     public javax.swing.JTextField JtxtPrexCPro;
     public javax.swing.JTextField JtxtValorPro;
     public javax.swing.JTextField Jtxtlote;
+    public javax.swing.JButton jBbuscar;
     public javax.swing.JButton jBproveedores;
+    public javax.swing.JButton jBrecargar;
+    public javax.swing.JButton jBstock;
     public javax.swing.JButton jBventas;
     public javax.swing.JButton jBvolver;
     private javax.swing.JLabel jLabel11;
@@ -309,12 +350,14 @@ public class JFprod extends javax.swing.JFrame {
     public javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTextField jTextbuscar;
     public javax.swing.JToolBar jToolBar3;
+    public javax.swing.JTable jTprod;
     // End of variables declaration//GEN-END:variables
 }

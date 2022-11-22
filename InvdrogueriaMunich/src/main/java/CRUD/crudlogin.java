@@ -13,38 +13,40 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.ModelLogin;
 import view.frmError;
+import view.JFlogin;
 
 /**
  *
  * @author Julieth
  */
 public class crudlogin extends CtrlConnection {
-
+    JFlogin vistalogin = new JFlogin();
     frmError vError = new frmError();
 
     public boolean verificarusuario(ModelLogin mlogin) {
-        Connection con = getConnection();
-        ResultSet rs = null;
-        CallableStatement cst = null;
-        String sql = "{call verificarusuario(?,?)}";
-        boolean response = false;
+         Connection con = getConnection();
+        ResultSet rs;
+        CallableStatement cst;
+        String sql = "{call verificarusuario(?,?) }";
         try {
             cst = con.prepareCall(sql);
-            cst.setString(2, mlogin.getUsuario());
-            cst.setString(3, mlogin.getContrasena());
-            cst.execute();
+            cst.setString(1, mlogin.getUsuario());
+            cst.setString(2, mlogin.getContrasena());
+            rs = cst.executeQuery();
+            
             if (rs.next()) {
-                mlogin.setContrasena(rs.getString("contrasena"));
                 mlogin.setUsuario(rs.getString("usuario"));
+                mlogin.setContrasena(rs.getString("contrasena"));
                 return true;
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario no existente", "¡Mensaje de error!", JOptionPane.ERROR_MESSAGE);
+                this.vistalogin.jTxtUser.setText("");
+                this.vistalogin.jTextPass.setText("");
                 return false;
             }
         } catch (SQLException e) {
             System.err.println(e);
             vError.setVisible(true);
-
             return false;
         } finally {
             try {

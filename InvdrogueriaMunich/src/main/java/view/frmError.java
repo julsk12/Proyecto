@@ -16,6 +16,7 @@ public class frmError extends javax.swing.JFrame {
      */
     public frmError() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

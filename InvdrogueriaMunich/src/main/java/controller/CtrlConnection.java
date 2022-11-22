@@ -27,7 +27,7 @@ public class CtrlConnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(this.url,this.user,this.password);
-            JOptionPane.showMessageDialog(null, "conexion exitosa");
+            System.out.println("conexion exitosa");
         } catch (SQLException e) {            
             frmError vError = new frmError();
             vError.setVisible(true);

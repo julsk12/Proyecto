@@ -29,17 +29,16 @@ public class crudproductos extends CtrlConnection {
         Connection con = getConnection();
         ResultSet rs = null;
         CallableStatement cst = null;
-        String sql = "{call addproducto(?,?,?,?,?,?)}";
-        boolean response = false;
+        String sql = "{call addproducto(?,?,?,?,?,?) }";
         try {
             cst = con.prepareCall(sql);
-            cst.setString(2, mProd.getNom());
-            cst.setDouble(3, mProd.getPre());
-            cst.setDouble(4, mProd.getPrexc());
-            cst.setInt(5, mProd.getCan());
-            cst.setString(6, mProd.getFven());
+            cst.setString(1, mProd.getNom());
+            cst.setDouble(2, mProd.getPre());
+            cst.setDouble(3, mProd.getPrexc());
+            cst.setInt(4, mProd.getCan());
+            cst.setString(5, mProd.getFven());
+            cst.setString(6, mProd.getLot());
             cst.execute();
-
             return true;
 
         } catch (SQLException e) {
@@ -94,8 +93,7 @@ public class crudproductos extends CtrlConnection {
         Connection con = getConnection();
         ResultSet rs = null;
         CallableStatement cst = null;
-        String sql = "{call modproducto(?,?,?,?,?,?)}";
-        boolean response = false;
+        String sql = "{call modproducto(?,?,?,?,?,?,?)}";
         try {
             cst = con.prepareCall(sql);
             cst.setInt(1, mProd.getId());
@@ -104,7 +102,8 @@ public class crudproductos extends CtrlConnection {
             cst.setDouble(4, mProd.getPrexc());
             cst.setInt(5, mProd.getCan());
             cst.setString(6, mProd.getFven());
-            cst.execute();
+            cst.setString(7, mProd.getLot());
+            cst.executeQuery();
             return true;
         } catch (SQLException e) {
             System.err.println(e);
@@ -199,14 +198,14 @@ public class crudproductos extends CtrlConnection {
     }
 
     public DefaultTableModel modeloTablaProductos() {
-        String[] columnas = {"Id", "Nombre", "Precio por caja", "precio", "Cantidad", "Fecha de vencimiento", "Lote"};
+        String[] columnas = {"Id", "Nombre", "Precio", "precio  por caja", "Cantidad", "Fecha de vencimiento", "Lote"};
         String[] filas = new String[7];
         DefaultTableModel modeloProducto = new DefaultTableModel(null, columnas);
 
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String sql = "{call mostrarprod}";
+        String sql = "{call mostrarprod()}";
 
         try {
 

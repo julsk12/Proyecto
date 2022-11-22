@@ -15,12 +15,12 @@ import view.JFinicio1;
 public class Ctrllogin extends crudlogin implements ActionListener {
 
     JFlogin vistalogin;
-    JFinicio1 vistamain;
     crudlogin cl = new crudlogin();
     ModelLogin mlogin = new ModelLogin();
 
     public Ctrllogin(JFlogin vistalogin) {
         this.vistalogin = vistalogin;
+        this.iniciar();
         this.vistalogin.jBIngresar.addActionListener(this);
         this.vistalogin.jBcerrar.addActionListener(this);
        }
@@ -30,14 +30,6 @@ public class Ctrllogin extends crudlogin implements ActionListener {
         return txt.matches("[a-zA-Z]+");
     }
 
-  
-
-    //Limpiar Jtable
-//    public void limpiar() {
-//        tableModel.getDataVector().removeAllElements();
-//        tableModel1.getDataVector().removeAllElements();
-//        tableModel2.getDataVector().removeAllElements();
-//    }
     public void iniciar() {
         this.vistalogin.setVisible(true);
     }
@@ -56,11 +48,13 @@ public class Ctrllogin extends crudlogin implements ActionListener {
             } else if (vistalogin.jTxtUser.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Error, el campo usuario está vacio, llene la informacion");
             } else {
-                mlogin.setContrasena(vistalogin.jTextPass.getText());
                 mlogin.setUsuario(vistalogin.jTxtUser.getText());
+                mlogin.setContrasena(vistalogin.jTextPass.getText());
                 if (cl.verificarusuario(mlogin)) {
-                    vistamain = new JFinicio1();
+                  JFinicio1 vistamain = new JFinicio1();
+                  CtrlMain cm = new CtrlMain(vistamain);
                     vistamain.setVisible(true);
+                    vistalogin.dispose();
                 }
             }
         }
