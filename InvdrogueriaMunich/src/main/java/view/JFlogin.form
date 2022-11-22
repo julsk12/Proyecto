@@ -150,20 +150,17 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="jBcerrar">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\boton.png"/>
+              <Image iconType="2" name="C:\Users\SENA\Desktop\WorkSpace_SJ\Proyecto\InvdrogueriaMunich\src\main\java\img\boton.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
           <Events>
@@ -209,7 +206,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\medical-49_icon-icons.com_73913.png"/>
+              <Image iconType="2" name="C:\Users\SENA\Desktop\WorkSpace_SJ\Proyecto\InvdrogueriaMunich\src\main\java\img\medical-49_icon-icons.com_73913.png"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -240,7 +237,7 @@
         <Component class="javax.swing.JLabel" name="Lfondo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\Medico.jpg"/>
+              <Image iconType="2" name="C:\Users\SENA\Desktop\WorkSpace_SJ\Proyecto\InvdrogueriaMunich\src\main\java\img\Medico.jpg"/>
             </Property>
           </Properties>
           <AuxValues>

@@ -20,12 +20,12 @@ import javax.swing.JOptionPane;
  * @author Julieth
  */
 public class Ctrlprod implements ActionListener {
-
+    
     JFprod vistaprod;
     Modelprod mProd = new Modelprod();
     Modeldetaprod mDetaprod = new Modeldetaprod();
     crudproductos cProd = new crudproductos();
-
+    
     public Ctrlprod(JFprod vistaprod) {
         this.vistaprod = vistaprod;
         this.vistaprod.JBAñadePro.addActionListener(this);
