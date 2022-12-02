@@ -51,7 +51,7 @@ public class crudproductos extends CtrlConnection {
                 mProd.setCan(Integer.parseInt(rs.getString("cantidad")));
                 mProd.setFven(rs.getString("Fecha_vencimiento"));
                 mProd.setLot(rs.getString("lote"));
-                         
+
                 listaProd.add(mProd);
             }
         } catch (SQLException e) {
@@ -97,7 +97,7 @@ public class crudproductos extends CtrlConnection {
         }
 
     }
-    
+
     //Añadir datos a la tabla detalles
     public boolean añadirDetaProd(Modeldetaprod mDetaProd) {
         Connection con = getConnection();
@@ -130,7 +130,7 @@ public class crudproductos extends CtrlConnection {
         }
 
     }
- 
+
 //Eliminar datos de la tabla productos
     public boolean eliminarproductos(Modelprod mProd) {
         Connection con = getConnection();
@@ -159,9 +159,9 @@ public class crudproductos extends CtrlConnection {
         }
 
     }
-    
-        //Eliminar datos de la tabla detalles
-       public boolean eliminarDetaprod(Modelprod mProd) {
+
+    //Eliminar datos de la tabla detalles
+    public boolean eliminarDetaprod(Modelprod mProd) {
         Connection con = getConnection();
         ResultSet rs = null;
         CallableStatement cst = null;
@@ -188,8 +188,8 @@ public class crudproductos extends CtrlConnection {
         }
 
     }
-    
-       //Actualizar o modificar datos de la tabla productos
+
+    //Actualizar o modificar datos de la tabla productos
     public boolean modificarproductos(Modelprod mProd) {
         CallableStatement cst = null;
         Connection con = getConnection();
@@ -222,9 +222,9 @@ public class crudproductos extends CtrlConnection {
             }
         }
     }
-    
-        //Modificar o actualizar datos de la tabla detalles
-        public boolean modificarDetaprod(Modeldetaprod mDetaProd) {
+
+    //Modificar o actualizar datos de la tabla detalles
+    public boolean modificarDetaprod(Modeldetaprod mDetaProd) {
         CallableStatement cst = null;
         Connection con = getConnection();
         String sql = "{call modDetaprod(?,?,?)}";
@@ -252,33 +252,6 @@ public class crudproductos extends CtrlConnection {
         }
     }
 
-    public boolean buscarproductos(Modelprod mProd) {
-        Connection con = getConnection();
-        ResultSet rs = null;
-        CallableStatement cst = null;
-        String sql = "{call buscarproducto(?)}";
-        try {
-            cst = con.prepareCall(sql);
-            cst.setInt(1, mProd.getId());
-            cst.execute();
-
-            return true;
-        } catch (SQLException e) {
-            System.err.println(e);
-            vError.setVisible(true);
-            vError.setLocationRelativeTo(null);
-            return false;
-        } finally {
-            try {
-                con.close();
-            } catch (SQLException e) {
-                System.out.println(e.toString());
-                vError.setVisible(true);
-                vError.setLocationRelativeTo(null);
-                return false;
-            }
-        }
-    }
 
     public DefaultTableModel buscarProductos(Modelprod mProd) {
         String[] columnas = {"Id_pro", "Nombre", "Precio", "Precio por caja", "Cantidad", "Fecha de vencimiento", "Lote"};
@@ -287,7 +260,7 @@ public class crudproductos extends CtrlConnection {
         CallableStatement cst = null;
         ResultSet rs = null;
         String sql = "{call buscarproducto(?)}";
-     
+
         try {
 
             Connection con = getConnection();
@@ -419,7 +392,7 @@ public class crudproductos extends CtrlConnection {
         }
         return modeloMasVentas;
     }
-    
+
     public DefaultTableModel modeloProdVenci() {
         String[] columnas = {"Id", "Producto", "Cantidad existente", "Precio", "Fecha de vencimiento"};
         String[] filas = new String[5];
@@ -452,6 +425,39 @@ public class crudproductos extends CtrlConnection {
             verror.setLocationRelativeTo(null);
         }
         return modeloMasVentas;
+    }
+
+   public DefaultTableModel buscarStock(Modelprod mProd) {
+        String[] columnas = {"Id_pro", "Nombre", "Precio", "Total venta", "Fecha venta"};
+        String[] filas = new String[5];
+        DefaultTableModel modeloProducto = new DefaultTableModel(null, columnas);
+        CallableStatement cst = null;
+        ResultSet rs = null;
+        String sql = "{call Buscarstock(?)}";
+
+        try {
+
+            Connection con = getConnection();
+            cst = con.prepareCall(sql);
+            cst.setString(1, mProd.getNom());
+            rs = cst.executeQuery();
+
+            while (rs.next()) {
+                filas[0] = rs.getString("id_pro");
+                filas[1] = rs.getString("Producto");
+                filas[2] = rs.getString("precioxund");
+                filas[3] = rs.getString("total_venta");
+                filas[4] = rs.getString("fecha_venta");
+                modeloProducto.addRow(filas);
+            }
+
+        } catch (SQLException e) {
+            frmError verror = new frmError();
+            verror.setVisible(true);
+            verror.setLocationRelativeTo(null);
+            verror.lbErrorDuck2.setText(e.getMessage());
+        }
+        return modeloProducto;
     }
 
 }

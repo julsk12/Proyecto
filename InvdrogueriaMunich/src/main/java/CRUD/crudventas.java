@@ -162,34 +162,40 @@ public class crudventas extends CtrlConnection {
             }
         }
     }
-
-    public boolean buscarVentas(Modelventas mVentas) {
-        Connection con = getConnection();
-        ResultSet rs = null;
+ //Busccar ventas
+    public DefaultTableModel buscarVentas(ModeldetaVen mDetaVen) {
+         String[] columnas = {"Id", "Nombre", "Cantidad", "Total venta", "Fecha venta"};
+        String[] filas = new String[5];
+        DefaultTableModel modeloventas = new DefaultTableModel(null, columnas);
         CallableStatement cst = null;
-        String sql = "{call buscarventa(?)}";
-        try {
-            cst = con.prepareCall(sql);
-            cst.setInt(1, mVentas.getId_ventas());
-            cst.execute();
+        ResultSet rs = null;
+        String sql = "{call Buscaventas(?)}";
 
-            return true;
-        } catch (SQLException e) {
-            System.err.println(e);
-            vError.setVisible(true);
-            vError.setLocationRelativeTo(null);
-            return false;
-        } finally {
-            try {
-                con.close();
-            } catch (SQLException e) {
-                System.out.println(e.toString());
-                vError.setVisible(true);
-                vError.setLocationRelativeTo(null);
-                return false;
+        try {
+
+            Connection con = getConnection();
+            cst = con.prepareCall(sql);
+            cst.setString(1,mDetaVen.getFecha_venta());
+            rs = cst.executeQuery();
+
+            while (rs.next()) {
+                filas[0] = rs.getString("id_ventas");
+                filas[1] = rs.getString("nombre");
+                filas[2] = rs.getString("cantidad_productos");
+                filas[3] = rs.getString("total_venta");
+                filas[4] = rs.getString("fecha_venta");
+                modeloventas.addRow(filas);
             }
+
+        } catch (SQLException e) {
+            frmError verror = new frmError();
+            System.out.println(e);
+            verror.setVisible(true);
+            verror.setLocationRelativeTo(null);
         }
+        return modeloventas;
     }
+    
 
     public DefaultTableModel modeloTablaVentas() {
         String[] columnas = {"Id", "Nombre", "Cantidad", "Total venta", "Fecha venta"};
