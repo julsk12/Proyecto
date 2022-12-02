@@ -12,31 +12,33 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import view.frmError;
+
 /**
  *
  * @author Julieth
  */
 public class CtrlConnection {
-    private final String db = "inven_drogueriamunich"; 
+
+    private final String db = "inven_drogueriamunich";
     private final String user = "root";
     private final String password = "";
-    private final String url = "jdbc:mysql://localhost/"+db;
+    private final String url = "jdbc:mysql://localhost/" + db;
     private Connection con = null;
-    
-    public Connection getConnection(){
+
+    public Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(this.url,this.user,this.password);
+            con = DriverManager.getConnection(this.url, this.user, this.password);
             System.out.println("conexion exitosa");
-        } catch (SQLException e) {            
+        } catch (SQLException e) {
             frmError vError = new frmError();
             vError.setVisible(true);
             vError.lbErrorDuck2.setText(e.getMessage());
-        } catch(ClassNotFoundException ex){
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
-             frmError vError = new frmError();
-             vError.setVisible(true);
-             vError.lbErrorDuck2.setText(ex.getMessage());
+            frmError vError = new frmError();
+            vError.setVisible(true);
+            vError.lbErrorDuck2.setText(ex.getMessage());
         }
         return con;
     }

@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import model.Modelprov;
 import view.JFprov;
@@ -25,17 +27,47 @@ public class crudproveedores extends CtrlConnection {
     frmError vError = new frmError();
     JFprov vistaproveedor = new JFprov();
 
+    //Metodo array para llenar jcombo
+    public ArrayList<Modelprov> getProveedores() {
+        CallableStatement cst = null;
+        Statement stm;
+        ResultSet rs = null;
+        Connection con = getConnection();
+        ArrayList<Modelprov> listaPro = new ArrayList<>();
+        String sql = "{call mostrarprov()}";
+
+        try {
+            stm = con.createStatement();
+            rs = stm.executeQuery(sql);
+
+            while (rs.next()) {
+                Modelprov mProv = new Modelprov();
+                mProv.setIdProveedor(Integer.parseInt(rs.getString("id_proveedor")));
+                mProv.setNombre(rs.getString("Nombre"));
+                mProv.setNumero(Integer.parseInt(rs.getString("Numero")));
+                mProv.setDireccion(rs.getString("Direccion"));
+                listaPro.add(mProv);
+            }
+        } catch (SQLException e) {
+            vError.setVisible(true);
+            vError.setLocationRelativeTo(null);
+            System.out.println(" "+ e.toString());;
+        }
+        return listaPro;
+    }
+
+    //Añadir proveedores
     public boolean añadirproveedores(Modelprov mProv) {
         Connection con = getConnection();
         ResultSet rs = null;
         CallableStatement cst = null;
         String sql = "{call addproveedor(?,?,?)}";
-        boolean response = false;
+
         try {
             cst = con.prepareCall(sql);
-            cst.setString(2, mProv.getNombre());
-            cst.setInt(3, mProv.getNumero());
-            cst.setString(4, mProv.getDireccion());
+            cst.setString(1, mProv.getNombre());
+            cst.setInt(2, mProv.getNumero());
+            cst.setString(3, mProv.getDireccion());
             cst.execute();
 
             return true;
@@ -58,16 +90,15 @@ public class crudproveedores extends CtrlConnection {
 
     }
 
+    //Eliminar proveedores
     public boolean eliminarproveedor(Modelprov mProv) {
         Connection con = getConnection();
         ResultSet rs = null;
         CallableStatement cst = null;
-        String sql = "{call deleteproveedor(?,?)}";
-        boolean response = false;
+        String sql = "{call deleteproveedor(?)}";
         try {
             cst = con.prepareCall(sql);
             cst.setInt(1, mProv.getIdProveedor());
-            cst.setString(2, mProv.getNombre());
             cst.execute();
             return true;
         } catch (SQLException e) {
@@ -88,48 +119,28 @@ public class crudproveedores extends CtrlConnection {
 
     }
 
+    //Modificar proveedores
     public boolean modificarproveedores(Modelprov mProv) {
-        Connection con = getConnection();
-        ResultSet rs = null;
-        CallableStatement cst = null;
-        String sql = "{call modproveedor(?,?,?,?)}";
-        boolean response = false;
-        try {
-            cst = con.prepareCall(sql);
-            cst.setInt(1, mProv.getIdProveedor());
-            cst.setString(2, mProv.getNombre());
-            cst.setInt(3, mProv.getNumero());
-            cst.setString(4, mProv.getDireccion());
-            cst.execute();
-            return true;
-        } catch (SQLException e) {
-            System.err.println(e);
-            vError.setVisible(true);
-            vError.setLocationRelativeTo(null);
-            return false;
-        } finally {
-            try {
-                con.close();
-            } catch (SQLException e) {
-                System.out.println(e.toString());
-                vError.setVisible(true);
-                vError.setLocationRelativeTo(null);
-                return false;
-            }
-        }
-    }
 
-    public boolean buscarproroveedor(Modelprov mProv) {
         Connection con = getConnection();
         ResultSet rs = null;
         CallableStatement cst = null;
-        String sql = "{call buscarproveedor(?,?)}";
+        String sql = "{call modprov(?,?,?,?)}";
         boolean response = false;
         try {
             cst = con.prepareCall(sql);
-            cst.setInt(1, mProv.getIdProveedor());
-            cst.setString(2, mProv.getNombre());
-            cst.execute();
+
+            cst.setString(1, mProv.getNombre());
+            cst.setInt(2, mProv.getNumero());
+            cst.setString(3, mProv.getDireccion());
+            cst.setInt(4, mProv.getIdProveedor());
+
+            try {
+                Boolean mensaje = cst.execute();
+                System.out.println(mensaje);
+            } catch (Exception e) {
+                System.out.println("algo " + e.toString());
+            }
 
             return true;
         } catch (SQLException e) {
@@ -149,19 +160,21 @@ public class crudproveedores extends CtrlConnection {
         }
     }
 
-    public DefaultTableModel filtrarProv(int buscar) {
-        String[] columnas = {"Id", "Nombre"};
+    //Busccar proveedores
+    public DefaultTableModel BuscarProv(Modelprov mProv) {
+        String[] columnas = {"Id", "Nombre", "Numero", "Direccion"};
         String[] filas = new String[4];
         DefaultTableModel modeloproveedor = new DefaultTableModel(null, columnas);
-        PreparedStatement ps = null;
+        CallableStatement cst = null;
         ResultSet rs = null;
-        String sql = "SELECT * FROM inven_drogueriamunich.proveedores where id_proveedor='" + buscar + "'";
+        String sql = "{call buscarproveedor(?)}";
 
         try {
 
             Connection con = getConnection();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
+            cst = con.prepareCall(sql);
+            cst.setInt(1,mProv.getIdProveedor());
+            rs = cst.executeQuery();
 
             while (rs.next()) {
                 filas[0] = rs.getString("Id_proveedor");
@@ -173,22 +186,20 @@ public class crudproveedores extends CtrlConnection {
 
         } catch (SQLException e) {
             frmError verror = new frmError();
+            System.out.println(e);
             verror.setVisible(true);
             verror.setLocationRelativeTo(null);
-            verror.lbErrorDuck2.setText(e.getMessage());
         }
         return modeloproveedor;
     }
-
-    public DefaultTableModel modeloTablaProductos() {
+//Modelo general de la tabla
+    public DefaultTableModel modeloTablaProv() {
         String[] columnas = {"Id", "Nombre", "Numero", "Direccion"};
-        String[] filas = new String[7];
+        String[] filas = new String[4];
         DefaultTableModel modeloProveedor = new DefaultTableModel(null, columnas);
-
         PreparedStatement ps = null;
         ResultSet rs = null;
-
-        String sql = "{call mostrarproveedor}";
+        String sql = "{call mostrarprov}";
 
         try {
 
@@ -208,10 +219,9 @@ public class crudproveedores extends CtrlConnection {
             frmError verror = new frmError();
             verror.setVisible(true);
             verror.setLocationRelativeTo(null);
-            verror.lbErrorDuck2.setText(e.getMessage());
+            System.out.println(e.toString());
         }
         return modeloProveedor;
     }
 
 }
-

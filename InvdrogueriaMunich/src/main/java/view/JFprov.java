@@ -16,6 +16,7 @@ public class JFprov extends javax.swing.JFrame {
      */
     public JFprov() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -27,79 +28,75 @@ public class JFprov extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jBrecargar = new javax.swing.JButton();
         jToolBar3 = new javax.swing.JToolBar();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jBback = new javax.swing.JButton();
+        jBproductos = new javax.swing.JButton();
+        jBventas = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTprov = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        txtCodigoPro = new javax.swing.JTextField();
+        jTextIdPro = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtNombrePro = new javax.swing.JTextField();
+        jTextNombrePro = new javax.swing.JTextField();
         jSeparator7 = new javax.swing.JSeparator();
-        btnAñadePro = new javax.swing.JButton();
-        btnEliminaPro = new javax.swing.JButton();
-        btnEditaPro = new javax.swing.JButton();
+        jBAñadePro = new javax.swing.JButton();
+        jBEliminaPro = new javax.swing.JButton();
+        jBEditaPro = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        txtFecha = new javax.swing.JTextField();
+        jTextdireccion = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
-        txtStockPro = new javax.swing.JTextField();
+        jTexttelefono = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
+        jBbuscarprov = new javax.swing.JButton();
+        jSeparator9 = new javax.swing.JSeparator();
+        jTextbuscar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jBrecargar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\arrow_arrows_direction_loop_reload_icon_193363.png")); // NOI18N
+        jBrecargar.setBorder(null);
+        getContentPane().add(jBrecargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, -1, -1));
+
         jToolBar3.setBackground(new java.awt.Color(255, 255, 255));
         jToolBar3.setRollover(true);
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\leftarrowsquarebuttonoutline_81094.png")); // NOI18N
-        jButton3.setFocusable(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jBback.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\leftarrowsquarebuttonoutline_81094.png")); // NOI18N
+        jBback.setFocusable(false);
+        jBback.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBback.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jBbackActionPerformed(evt);
             }
         });
-        jToolBar3.add(jButton3);
+        jToolBar3.add(jBback);
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\proveedor.png")); // NOI18N
-        jButton5.setFocusable(false);
-        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jBproductos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\productividad.png")); // NOI18N
+        jBproductos.setFocusable(false);
+        jBproductos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBproductos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBproductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jBproductosActionPerformed(evt);
             }
         });
-        jToolBar3.add(jButton5);
+        jToolBar3.add(jBproductos);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\ventas.png")); // NOI18N
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar3.add(jButton1);
-
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Downloads\\biggarbagebin_121980.png")); // NOI18N
-        jButton4.setToolTipText("");
-        jButton4.setFocusable(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar3.add(jButton4);
+        jBventas.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\ventas.png")); // NOI18N
+        jBventas.setFocusable(false);
+        jBventas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBventas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar3.add(jBventas);
 
         getContentPane().add(jToolBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 50));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTprov.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -110,7 +107,7 @@ public class JFprov extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(jTprov);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 460, 480));
 
@@ -121,95 +118,116 @@ public class JFprov extends javax.swing.JFrame {
         jLabel4.setText("Añadir proveedor");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
-        txtCodigoPro.setForeground(new java.awt.Color(204, 204, 204));
-        txtCodigoPro.setBorder(null);
-        jPanel1.add(txtCodigoPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 217, 26));
+        jTextIdPro.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextIdPro.setBorder(null);
+        jPanel1.add(jTextIdPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 217, 26));
 
         jSeparator5.setBackground(new java.awt.Color(102, 153, 255));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 217, 12));
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 217, 12));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("Id");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 20, 20));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("Nombre");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
-        txtNombrePro.setBorder(null);
-        jPanel1.add(txtNombrePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 217, 26));
+        jTextNombrePro.setBorder(null);
+        jPanel1.add(jTextNombrePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 217, 26));
 
         jSeparator7.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 217, 12));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 217, 12));
 
-        btnAñadePro.setBackground(new java.awt.Color(153, 255, 153));
-        btnAñadePro.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btnAñadePro.setForeground(new java.awt.Color(51, 51, 51));
-        btnAñadePro.setText("Añadir producto");
-        btnAñadePro.setBorder(null);
-        btnAñadePro.setBorderPainted(false);
-        btnAñadePro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAñadePro.setFocusPainted(false);
-        btnAñadePro.setFocusable(false);
-        jPanel1.add(btnAñadePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 404, 157, 30));
+        jBAñadePro.setBackground(new java.awt.Color(153, 255, 153));
+        jBAñadePro.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jBAñadePro.setText("Añadir proveedor");
+        jBAñadePro.setBorder(null);
+        jBAñadePro.setBorderPainted(false);
+        jBAñadePro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBAñadePro.setFocusPainted(false);
+        jBAñadePro.setFocusable(false);
+        jPanel1.add(jBAñadePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 404, 157, 30));
 
-        btnEliminaPro.setBackground(new java.awt.Color(255, 102, 102));
-        btnEliminaPro.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btnEliminaPro.setForeground(new java.awt.Color(51, 51, 51));
-        btnEliminaPro.setText("Eliminar producto");
-        btnEliminaPro.setBorder(null);
-        btnEliminaPro.setBorderPainted(false);
-        btnEliminaPro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminaPro.setFocusPainted(false);
-        btnEliminaPro.setFocusable(false);
-        jPanel1.add(btnEliminaPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 404, 135, 30));
+        jBEliminaPro.setBackground(new java.awt.Color(255, 102, 102));
+        jBEliminaPro.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jBEliminaPro.setText("Eliminar proveedor");
+        jBEliminaPro.setBorder(null);
+        jBEliminaPro.setBorderPainted(false);
+        jBEliminaPro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBEliminaPro.setFocusPainted(false);
+        jBEliminaPro.setFocusable(false);
+        jPanel1.add(jBEliminaPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 404, 160, 30));
 
-        btnEditaPro.setBackground(new java.awt.Color(51, 102, 255));
-        btnEditaPro.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btnEditaPro.setForeground(new java.awt.Color(51, 51, 51));
-        btnEditaPro.setText("Editar  producto");
-        btnEditaPro.setBorder(null);
-        btnEditaPro.setBorderPainted(false);
-        btnEditaPro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEditaPro.setFocusPainted(false);
-        btnEditaPro.setFocusable(false);
-        jPanel1.add(btnEditaPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 404, 130, 30));
+        jBEditaPro.setBackground(new java.awt.Color(51, 102, 255));
+        jBEditaPro.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jBEditaPro.setForeground(new java.awt.Color(255, 255, 255));
+        jBEditaPro.setText("Editar  proveedor");
+        jBEditaPro.setBorder(null);
+        jBEditaPro.setBorderPainted(false);
+        jBEditaPro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBEditaPro.setFocusPainted(false);
+        jBEditaPro.setFocusable(false);
+        jPanel1.add(jBEditaPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 150, 30));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("Telefono");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, -1));
 
-        txtFecha.setBorder(null);
-        jPanel1.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 217, 26));
+        jTextdireccion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextdireccion.setBorder(null);
+        jPanel1.add(jTextdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 217, 26));
 
         jSeparator8.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator8.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 217, 10));
+        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 217, 10));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("Direccion");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, -1, -1));
 
-        txtStockPro.setBorder(null);
-        jPanel1.add(txtStockPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 217, 26));
+        jTexttelefono.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTexttelefono.setBorder(null);
+        jPanel1.add(jTexttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 217, 26));
 
         jSeparator6.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 217, 12));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 217, 12));
+
+        jBbuscarprov.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\magnifier_icon-icons.com_67993.png")); // NOI18N
+        jBbuscarprov.setBorder(null);
+        jBbuscarprov.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBbuscarprovActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBbuscarprov, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        jSeparator9.setBackground(new java.awt.Color(102, 153, 255));
+        jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 460, 12));
+
+        jTextbuscar.setBorder(null);
+        jPanel1.add(jTextbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 460, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 540, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jBbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jBbackActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jBproductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBproductosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_jBproductosActionPerformed
+
+    private void jBbuscarprovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarprovActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBbuscarprovActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,13 +265,14 @@ public class JFprov extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnAñadePro;
-    public javax.swing.JButton btnEditaPro;
-    public javax.swing.JButton btnEliminaPro;
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton3;
-    public javax.swing.JButton jButton4;
-    public javax.swing.JButton jButton5;
+    public javax.swing.JButton jBAñadePro;
+    public javax.swing.JButton jBEditaPro;
+    public javax.swing.JButton jBEliminaPro;
+    public javax.swing.JButton jBback;
+    public javax.swing.JButton jBbuscarprov;
+    public javax.swing.JButton jBproductos;
+    public javax.swing.JButton jBrecargar;
+    public javax.swing.JButton jBventas;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -265,11 +284,13 @@ public class JFprov extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JSeparator jSeparator9;
+    public javax.swing.JTextField jTextIdPro;
+    public javax.swing.JTextField jTextNombrePro;
+    public javax.swing.JTextField jTextbuscar;
+    public javax.swing.JTextField jTextdireccion;
+    public javax.swing.JTextField jTexttelefono;
     public javax.swing.JToolBar jToolBar3;
-    public javax.swing.JTextField txtCodigoPro;
-    public javax.swing.JTextField txtFecha;
-    public javax.swing.JTextField txtNombrePro;
-    public javax.swing.JTextField txtStockPro;
+    public javax.swing.JTable jTprov;
     // End of variables declaration//GEN-END:variables
 }

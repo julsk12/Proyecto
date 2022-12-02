@@ -49,7 +49,7 @@ public class JFinicio1 extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        tablavencidos = new javax.swing.JTable();
+        jTvencidos = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         JBmosvenci = new javax.swing.JButton();
@@ -60,8 +60,8 @@ public class JFinicio1 extends javax.swing.JFrame {
 
         jBgeneral.setBackground(new java.awt.Color(156, 230, 255));
         jBgeneral.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jBgeneral.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\control-de-acceso.png")); // NOI18N
-        jBgeneral.setText("  ACCESO GENERAL");
+        jBgeneral.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\virus_sanitizer_personal_care_products_icon_142193.png")); // NOI18N
+        jBgeneral.setText("  STOCK");
         jBgeneral.setBorder(null);
         jBgeneral.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jBgeneral.addActionListener(new java.awt.event.ActionListener() {
@@ -133,8 +133,6 @@ public class JFinicio1 extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(51, 51, 51));
         jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        JTprodago.setBackground(new java.awt.Color(51, 51, 51));
-        JTprodago.setForeground(new java.awt.Color(204, 204, 204));
         JTprodago.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -174,9 +172,7 @@ public class JFinicio1 extends javax.swing.JFrame {
 
         jPanel10.setBackground(new java.awt.Color(51, 51, 51));
 
-        tablavencidos.setBackground(new java.awt.Color(51, 51, 51));
-        tablavencidos.setForeground(new java.awt.Color(204, 204, 204));
-        tablavencidos.setModel(new javax.swing.table.DefaultTableModel(
+        jTvencidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -184,7 +180,7 @@ public class JFinicio1 extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane6.setViewportView(tablavencidos);
+        jScrollPane6.setViewportView(jTvencidos);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -215,8 +211,9 @@ public class JFinicio1 extends javax.swing.JFrame {
 
         jSeparator3.setBackground(new java.awt.Color(0, 51, 255));
 
-        JBmosvenci.setBackground(new java.awt.Color(255, 255, 255));
+        JBmosvenci.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         JBmosvenci.setText("MOSTRAR");
+        JBmosvenci.setBorder(null);
         JBmosvenci.setBorderPainted(false);
         JBmosvenci.setFocusPainted(false);
         JBmosvenci.setFocusable(false);
@@ -229,9 +226,9 @@ public class JFinicio1 extends javax.swing.JFrame {
             }
         });
 
-        JBmosago.setBackground(new java.awt.Color(255, 255, 255));
         JBmosago.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
         JBmosago.setText("MOSTRAR");
+        JBmosago.setBorder(null);
         JBmosago.setBorderPainted(false);
         JBmosago.setFocusPainted(false);
         JBmosago.setFocusable(false);
@@ -414,7 +411,7 @@ public class JFinicio1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator3;
+    public javax.swing.JTable jTvencidos;
     private javax.swing.JLabel jfondo;
-    public javax.swing.JTable tablavencidos;
     // End of variables declaration//GEN-END:variables
 }

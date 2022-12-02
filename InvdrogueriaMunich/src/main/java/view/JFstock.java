@@ -16,6 +16,7 @@ public class JFstock extends javax.swing.JFrame {
      */
     public JFstock() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -35,25 +36,24 @@ public class JFstock extends javax.swing.JFrame {
         jBvolver = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jPanel13 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jPanel15 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        tablaVentas2 = new javax.swing.JTable();
+        jTmasvendidos = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
         jPanel17 = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
-        tablaIngresos = new javax.swing.JTable();
+        jTventas = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        actualizaTabla3 = new javax.swing.JButton();
+        jBactualizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTall = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -65,7 +65,6 @@ public class JFstock extends javax.swing.JFrame {
 
         jToolBar1.setBackground(new java.awt.Color(178, 218, 250));
         jToolBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 
         JBbuscar.setBackground(new java.awt.Color(178, 218, 250));
@@ -110,28 +109,25 @@ public class JFstock extends javax.swing.JFrame {
         });
         jToolBar1.add(jBvolver);
 
-        jPanel8.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 40));
+        jPanel8.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 40));
 
         jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -2, -1, 40));
 
         jPanel11.setBackground(new java.awt.Color(178, 218, 250));
         jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Times New Roman", 2, 36)); // NOI18N
         jLabel1.setText("Inventario");
-
-        jPanel12.setBackground(new java.awt.Color(30, 30, 30));
-        jPanel12.setForeground(new java.awt.Color(102, 102, 102));
+        jPanel11.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, -1, -1));
 
         jPanel13.setBackground(new java.awt.Color(178, 218, 250));
 
-        jPanel15.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel15.setBackground(new java.awt.Color(255, 255, 255));
         jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        tablaVentas2.setBackground(new java.awt.Color(51, 51, 51));
-        tablaVentas2.setForeground(new java.awt.Color(204, 204, 204));
-        tablaVentas2.setModel(new javax.swing.table.DefaultTableModel(
+        jTmasvendidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -139,15 +135,13 @@ public class JFstock extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane10.setViewportView(tablaVentas2);
+        jScrollPane10.setViewportView(jTmasvendidos);
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 705, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 55, Short.MAX_VALUE))
+            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE)
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,13 +162,13 @@ public class JFstock extends javax.swing.JFrame {
         );
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel3.setText("Ingresos de productos");
+        jLabel3.setText("Ventas de productos");
 
-        jPanel17.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel17.setBackground(new java.awt.Color(255, 255, 255));
 
-        tablaIngresos.setBackground(new java.awt.Color(51, 51, 51));
-        tablaIngresos.setForeground(new java.awt.Color(204, 204, 204));
-        tablaIngresos.setModel(new javax.swing.table.DefaultTableModel(
+        jScrollPane12.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTventas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -182,13 +176,13 @@ public class JFstock extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane12.setViewportView(tablaIngresos);
+        jScrollPane12.setViewportView(jTventas);
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 762, Short.MAX_VALUE)
+            .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,16 +207,17 @@ public class JFstock extends javax.swing.JFrame {
 
         jSeparator3.setBackground(new java.awt.Color(0, 51, 255));
 
-        actualizaTabla3.setBackground(new java.awt.Color(51, 51, 51));
-        actualizaTabla3.setBorderPainted(false);
-        actualizaTabla3.setFocusPainted(false);
-        actualizaTabla3.setFocusable(false);
-        actualizaTabla3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        actualizaTabla3.setMaximumSize(new java.awt.Dimension(50, 50));
-        actualizaTabla3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        actualizaTabla3.addActionListener(new java.awt.event.ActionListener() {
+        jBactualizar.setBackground(new java.awt.Color(178, 218, 250));
+        jBactualizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\arrow_arrows_direction_loop_reload_icon_193363.png")); // NOI18N
+        jBactualizar.setBorderPainted(false);
+        jBactualizar.setFocusPainted(false);
+        jBactualizar.setFocusable(false);
+        jBactualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBactualizar.setMaximumSize(new java.awt.Dimension(50, 50));
+        jBactualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBactualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualizaTabla3ActionPerformed(evt);
+                jBactualizarActionPerformed(evt);
             }
         });
 
@@ -231,9 +226,6 @@ public class JFstock extends javax.swing.JFrame {
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator3)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addComponent(actualizaTabla3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,12 +237,15 @@ public class JFstock extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addComponent(jBactualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addComponent(actualizaTabla3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jBactualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addGap(2, 2, 2)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -265,45 +260,12 @@ public class JFstock extends javax.swing.JFrame {
 
         jScrollPane8.setViewportView(jPanel13);
 
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 723, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 53, Short.MAX_VALUE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-        );
+        jPanel11.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 660, 457));
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1409, 1409, 1409))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 680, 530));
 
-        jPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 43, 732, 490));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTall.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTall.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -314,9 +276,9 @@ public class JFstock extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTall);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 387, 490));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 33, 450, 530));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -332,9 +294,9 @@ public class JFstock extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JBmostrarActionPerformed
 
-    private void actualizaTabla3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizaTabla3ActionPerformed
+    private void jBactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBactualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_actualizaTabla3ActionPerformed
+    }//GEN-LAST:event_jBactualizarActionPerformed
 
     private void jBvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBvolverActionPerformed
         // TODO add your handling code here:
@@ -378,14 +340,13 @@ public class JFstock extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton JBbuscar;
     public javax.swing.JButton JBmostrar;
-    public javax.swing.JButton actualizaTabla3;
+    public javax.swing.JButton jBactualizar;
     public javax.swing.JButton jBvolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
@@ -399,9 +360,9 @@ public class JFstock extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jTall;
+    public javax.swing.JTable jTmasvendidos;
     private javax.swing.JToolBar jToolBar1;
-    public javax.swing.JTable tablaIngresos;
-    public javax.swing.JTable tablaVentas2;
+    public javax.swing.JTable jTventas;
     // End of variables declaration//GEN-END:variables
 }

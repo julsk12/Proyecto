@@ -34,9 +34,9 @@
           <Font name="Times New Roman" size="14" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\control-de-acceso.png"/>
+          <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\virus_sanitizer_personal_care_products_icon_142193.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="  ACCESO GENERAL"/>
+        <Property name="text" type="java.lang.String" value="  STOCK"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>
@@ -367,12 +367,6 @@
                                       <SubComponents>
                                         <Component class="javax.swing.JTable" name="JTprodago">
                                           <Properties>
-                                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                              <Color blue="33" green="33" red="33" type="rgb"/>
-                                            </Property>
-                                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                                            </Property>
                                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                               <Table columnCount="0" rowCount="0"/>
                                             </Property>
@@ -443,14 +437,8 @@
 
                                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                                       <SubComponents>
-                                        <Component class="javax.swing.JTable" name="tablavencidos">
+                                        <Component class="javax.swing.JTable" name="jTvencidos">
                                           <Properties>
-                                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                              <Color blue="33" green="33" red="33" type="rgb"/>
-                                            </Property>
-                                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                                            </Property>
                                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                               <Table columnCount="0" rowCount="0"/>
                                             </Property>
@@ -484,10 +472,13 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="JBmosvenci">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Times New Roman" size="14" style="3"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="MOSTRAR"/>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="null"/>
+                            </Property>
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="focusPainted" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
@@ -506,13 +497,13 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="JBmosago">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Times New Roman" size="12" style="3"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="MOSTRAR"/>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="null"/>
+                            </Property>
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="focusPainted" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>

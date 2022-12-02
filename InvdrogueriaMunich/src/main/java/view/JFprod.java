@@ -5,6 +5,10 @@
  */
 package view;
 
+import CRUD.crudproveedores;
+import java.util.ArrayList;
+import model.Modelprov;
+
 /**
  *
  * @author Julieth
@@ -16,6 +20,15 @@ public class JFprod extends javax.swing.JFrame {
      */
     public JFprod() {
         initComponents();
+        llenarCombo();
+    }
+
+    private void llenarCombo() {
+    crudproveedores cProv = new crudproveedores();
+    ArrayList<Modelprov> listapro = cProv.getProveedores();
+        for (int i = 0; i < listapro.size(); i++) {
+            jCprov.addItem(new Modelprov(listapro.get(i).getIdProveedor(), listapro.get(i).getNombre(), listapro.get(i).getNumero(), listapro.get(i).getDireccion()));
+        }
     }
 
     /**
@@ -57,8 +70,11 @@ public class JFprod extends javax.swing.JFrame {
         jSeparator10 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
         jBbuscar = new javax.swing.JButton();
-        jTextbuscar = new javax.swing.JTextField();
+        jTextbusca = new javax.swing.JTextField();
         jSeparator12 = new javax.swing.JSeparator();
+        jCprov = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator13 = new javax.swing.JSeparator();
         jToolBar3 = new javax.swing.JToolBar();
         jBvolver = new javax.swing.JButton();
         jBproveedores = new javax.swing.JButton();
@@ -140,7 +156,7 @@ public class JFprod extends javax.swing.JFrame {
 
         jSeparator11.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator11.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 217, 12));
+        jPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 217, 12));
 
         JBAñadePro.setBackground(new java.awt.Color(0, 102, 153));
         JBAñadePro.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -218,13 +234,28 @@ public class JFprod extends javax.swing.JFrame {
         });
         jPanel1.add(jBbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
-        jTextbuscar.setBackground(new java.awt.Color(178, 218, 250));
-        jTextbuscar.setBorder(null);
-        jPanel1.add(jTextbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 420, 20));
+        jTextbusca.setBackground(new java.awt.Color(178, 218, 250));
+        jTextbusca.setBorder(null);
+        jPanel1.add(jTextbusca, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 420, 20));
 
         jSeparator12.setBackground(new java.awt.Color(102, 153, 255));
         jSeparator12.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 217, 12));
+
+        jCprov.setBackground(new java.awt.Color(178, 218, 250));
+        jCprov.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jCprov.setMaximumRowCount(15);
+        jCprov.setBorder(null);
+        jCprov.setOpaque(false);
+        jPanel1.add(jCprov, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 220, 30));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel1.setText("Proveedores");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, -1, -1));
+
+        jSeparator13.setBackground(new java.awt.Color(102, 153, 255));
+        jSeparator13.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 217, 12));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 550, 510));
 
@@ -338,6 +369,8 @@ public class JFprod extends javax.swing.JFrame {
     public javax.swing.JButton jBstock;
     public javax.swing.JButton jBventas;
     public javax.swing.JButton jBvolver;
+    public javax.swing.JComboBox<Modelprov> jCprov;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel4;
@@ -351,12 +384,13 @@ public class JFprod extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    public javax.swing.JTextField jTextbuscar;
+    public javax.swing.JTextField jTextbusca;
     public javax.swing.JToolBar jToolBar3;
     public javax.swing.JTable jTprod;
     // End of variables declaration//GEN-END:variables

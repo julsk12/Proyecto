@@ -11,8 +11,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import model.Modelprod;
+import model.Modeldetaprod;
+import model.Modelprov;
 import view.JFprod;
 import view.frmError;
 
@@ -25,50 +29,117 @@ public class crudproductos extends CtrlConnection {
     frmError vError = new frmError();
     JFprod vistaprod = new JFprod();
 
+    //Metodo array para el jcombo
+    public ArrayList<Modelprod> getProd() {
+        CallableStatement cst = null;
+        Statement stm;
+        ResultSet rs = null;
+        Connection con = getConnection();
+        ArrayList<Modelprod> listaProd = new ArrayList<>();
+        String sql = "{call mostrarprod()}";
+
+        try {
+            stm = con.createStatement();
+            rs = stm.executeQuery(sql);
+
+            while (rs.next()) {
+                Modelprod mProd = new Modelprod();
+                mProd.setId(Integer.parseInt(rs.getString("id_pro")));
+                mProd.setNom(rs.getString("nombre"));
+                mProd.setPre(Double.parseDouble(rs.getString("precioxund")));
+                mProd.setPrexc(Double.parseDouble(rs.getString("precioxcaja")));
+                mProd.setCan(Integer.parseInt(rs.getString("cantidad")));
+                mProd.setFven(rs.getString("Fecha_vencimiento"));
+                mProd.setLot(rs.getString("lote"));
+                         
+                listaProd.add(mProd);
+            }
+        } catch (SQLException e) {
+            vError.setVisible(true);
+            vError.setLocationRelativeTo(null);
+            System.out.println(" " + e.toString());;
+        }
+        return listaProd;
+    }
+
+    //Añadir datos en la tabla productos
     public boolean añadirproductos(Modelprod mProd) {
         Connection con = getConnection();
         ResultSet rs = null;
         CallableStatement cst = null;
-        String sql = "{call addproducto(?,?,?,?,?,?) }";
-        try {
-            cst = con.prepareCall(sql);
-            cst.setString(1, mProd.getNom());
-            cst.setDouble(2, mProd.getPre());
-            cst.setDouble(3, mProd.getPrexc());
-            cst.setInt(4, mProd.getCan());
-            cst.setString(5, mProd.getFven());
-            cst.setString(6, mProd.getLot());
-            cst.execute();
-            return true;
-
-        } catch (SQLException e) {
-            System.err.println(e);
-            vError.setVisible(true);
-            vError.setLocationRelativeTo(null);
-            return false;
-        } finally {
-            try {
-                con.close();
-            } catch (SQLException e) {
-                System.out.println(e.toString());
-                vError.setVisible(true);
-                vError.setLocationRelativeTo(null);
-                return false;
-            }
-        }
-
-    }
-
-    public boolean eliminarproductos(Modelprod mProd) {
-        Connection con = getConnection();
-        ResultSet rs = null;
-        CallableStatement cst = null;
-        String sql = "{call deleteproducto(?,?)}";
-        boolean response = false;
+        String sql = "{call addproducto(?,?,?,?,?,?,?) }";
         try {
             cst = con.prepareCall(sql);
             cst.setInt(1, mProd.getId());
             cst.setString(2, mProd.getNom());
+            cst.setDouble(3, mProd.getPre());
+            cst.setDouble(4, mProd.getPrexc());
+            cst.setInt(5, mProd.getCan());
+            cst.setString(6, mProd.getFven());
+            cst.setString(7, mProd.getLot());
+            cst.execute();
+            return true;
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            vError.setVisible(true);
+            vError.setLocationRelativeTo(null);
+            return false;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.out.println(e.toString());
+                vError.setVisible(true);
+                vError.setLocationRelativeTo(null);
+                return false;
+            }
+        }
+
+    }
+    
+    //Añadir datos a la tabla detalles
+    public boolean añadirDetaProd(Modeldetaprod mDetaProd) {
+        Connection con = getConnection();
+        ResultSet rs = null;
+        CallableStatement cst = null;
+        String sql = "{call addDetaProd(?,?,?,?) }";
+        try {
+            cst = con.prepareCall(sql);
+            cst.setDouble(1, mDetaProd.getPrecio_compraxprod());
+            cst.setInt(2, mDetaProd.getCantidad_prod());
+            cst.setInt(3, mDetaProd.getId_pro());
+            cst.setInt(4, mDetaProd.getId_proveedor());
+            cst.execute();
+            return true;
+
+        } catch (SQLException e) {
+            System.err.println(e);
+            vError.setVisible(true);
+            vError.setLocationRelativeTo(null);
+            return false;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.out.println(e.toString());
+                vError.setVisible(true);
+                vError.setLocationRelativeTo(null);
+                return false;
+            }
+        }
+
+    }
+ 
+//Eliminar datos de la tabla productos
+    public boolean eliminarproductos(Modelprod mProd) {
+        Connection con = getConnection();
+        ResultSet rs = null;
+        CallableStatement cst = null;
+        String sql = "{call deleteproducto(?)}";
+        try {
+            cst = con.prepareCall(sql);
+            cst.setInt(1, mProd.getId());
             cst.execute();
             return true;
         } catch (SQLException e) {
@@ -88,11 +159,41 @@ public class crudproductos extends CtrlConnection {
         }
 
     }
-
-    public boolean modificarproductos(Modelprod mProd) {
+    
+        //Eliminar datos de la tabla detalles
+       public boolean eliminarDetaprod(Modelprod mProd) {
         Connection con = getConnection();
         ResultSet rs = null;
         CallableStatement cst = null;
+        String sql = "{call deleteDetaProd(?)}";
+        try {
+            cst = con.prepareCall(sql);
+            cst.setInt(1, mProd.getId());
+            cst.execute();
+            return true;
+        } catch (SQLException e) {
+            System.err.println(e);
+            vError.setVisible(true);
+            vError.setLocationRelativeTo(null);
+            return false;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.out.println(e.toString());
+                vError.setVisible(true);
+                vError.setLocationRelativeTo(null);
+                return false;
+            }
+        }
+
+    }
+    
+       //Actualizar o modificar datos de la tabla productos
+    public boolean modificarproductos(Modelprod mProd) {
+        CallableStatement cst = null;
+        Connection con = getConnection();
+        System.out.println(mProd.getNom());
         String sql = "{call modproducto(?,?,?,?,?,?,?)}";
         try {
             cst = con.prepareCall(sql);
@@ -103,7 +204,36 @@ public class crudproductos extends CtrlConnection {
             cst.setInt(5, mProd.getCan());
             cst.setString(6, mProd.getFven());
             cst.setString(7, mProd.getLot());
-            cst.executeQuery();
+            cst.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            System.err.println(e);
+            vError.setVisible(true);
+            vError.setLocationRelativeTo(null);
+            return false;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.out.println(e.toString());
+                vError.setVisible(true);
+                vError.setLocationRelativeTo(null);
+                return false;
+            }
+        }
+    }
+    
+        //Modificar o actualizar datos de la tabla detalles
+        public boolean modificarDetaprod(Modeldetaprod mDetaProd) {
+        CallableStatement cst = null;
+        Connection con = getConnection();
+        String sql = "{call modDetaprod(?,?,?)}";
+        try {
+            cst = con.prepareCall(sql);
+            cst.setDouble(1, mDetaProd.getPrecio_compraxprod());
+            cst.setInt(2, mDetaProd.getCantidad_prod());
+            cst.setInt(3, mDetaProd.getId_pro());
+            cst.executeUpdate();
             return true;
         } catch (SQLException e) {
             System.err.println(e);
@@ -126,18 +256,16 @@ public class crudproductos extends CtrlConnection {
         Connection con = getConnection();
         ResultSet rs = null;
         CallableStatement cst = null;
-        String sql = "{call buscarproducto(?,?)}";
-        boolean response = false;
+        String sql = "{call buscarproducto(?)}";
         try {
             cst = con.prepareCall(sql);
             cst.setInt(1, mProd.getId());
-            cst.setString(2, mProd.getNom());
             cst.execute();
-            
+
             return true;
         } catch (SQLException e) {
             System.err.println(e);
-             vError.setVisible(true);
+            vError.setVisible(true);
             vError.setLocationRelativeTo(null);
             return false;
         } finally {
@@ -145,37 +273,27 @@ public class crudproductos extends CtrlConnection {
                 con.close();
             } catch (SQLException e) {
                 System.out.println(e.toString());
-                 vError.setVisible(true);
-            vError.setLocationRelativeTo(null);
-            return false;
+                vError.setVisible(true);
+                vError.setLocationRelativeTo(null);
+                return false;
             }
         }
     }
-    
-    public DefaultTableModel filtrarDatosPro(int filtro, String buscar) {
-        String[] columnas = {"Codigo", "Nombre", "Descripción", "Valor", "Cantidad", "Fecha de vencimiento", "iPro"};
+
+    public DefaultTableModel buscarProductos(Modelprod mProd) {
+        String[] columnas = {"Id_pro", "Nombre", "Precio", "Precio por caja", "Cantidad", "Fecha de vencimiento", "Lote"};
         String[] filas = new String[7];
         DefaultTableModel modeloProducto = new DefaultTableModel(null, columnas);
-        PreparedStatement ps = null;
+        CallableStatement cst = null;
         ResultSet rs = null;
-        String sql = "";
-        if (filtro == 1) {
-            sql = "SELECT * FROM inven_drogueriamunich.productos where id_pro='" + buscar + "'";
-        } else if (filtro == 2) {
-            sql = "SELECT * FROM inven_drogueriamunich.productos where nombre='" + buscar + "'";
-        } else if (filtro == 3) {
-            sql = "SELECT * FROM inven_drogueriamunich.productos where Fecha_vencimiento='" + buscar + "'";
-        } else if (filtro == 4) {
-            sql = "SELECT * FROM inven_drogueriamunich.productos where precioxund='" + buscar + "'";
-        }else if (filtro == 5) {
-            sql = "SELECT * FROM inven_drogueriamunich.productos where cantidad='" + buscar + "'";
-        }
-
+        String sql = "{call buscarproducto(?)}";
+     
         try {
 
             Connection con = getConnection();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
+            cst = con.prepareCall(sql);
+            cst.setInt(1, mProd.getId());
+            rs = cst.executeQuery();
 
             while (rs.next()) {
                 filas[0] = rs.getString("id_pro");
@@ -198,11 +316,11 @@ public class crudproductos extends CtrlConnection {
     }
 
     public DefaultTableModel modeloTablaProductos() {
-        String[] columnas = {"Id", "Nombre", "Precio", "precio  por caja", "Cantidad", "Fecha de vencimiento", "Lote"};
+        String[] columnas = {"Id", "Nombre", "Precio", "precio por caja", "Cantidad", "Fecha de vencimiento", "Lote"};
         String[] filas = new String[7];
         DefaultTableModel modeloProducto = new DefaultTableModel(null, columnas);
 
-        PreparedStatement ps = null;
+        CallableStatement cst = null;
         ResultSet rs = null;
 
         String sql = "{call mostrarprod()}";
@@ -210,8 +328,8 @@ public class crudproductos extends CtrlConnection {
         try {
 
             Connection con = getConnection();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
+            cst = con.prepareCall(sql);
+            rs = cst.executeQuery();
 
             while (rs.next()) {
                 filas[0] = rs.getString("id_pro");
@@ -232,40 +350,35 @@ public class crudproductos extends CtrlConnection {
         }
         return modeloProducto;
     }
-    
-    public DefaultTableModel modeloInventario() {
-        String[] columnas = {"Codigo", "Nombre", "Valor", "Ventas", "f. venta", "Ingresos", "F. Ingresos"};
-        String[] filas = new String[7];
+
+    public DefaultTableModel modeloAllProducts() {
+        String[] columnas = {"Id", "Nombre", "Valor", "Ventas", "Fecha venta"};
+        String[] filas = new String[5];
         DefaultTableModel modeloIventario = new DefaultTableModel(null, columnas);
 
-        PreparedStatement ps = null;
+        CallableStatement cst = null;
         ResultSet rs = null;
 
-        String sql = "SELECT producto.proCodigo, producto.proNombre, producto.proValor, "
-                + "ventas.venTotal, ventas.venFecha, ingresos.ingTotal, ingresos.ingFecha "
-                + "FROM isfarmacia.producto INNER JOIN isfarmacia.ventas "
-                + "ON producto.proCodigo = ventas.proCodigo INNER JOIN isfarmacia.ingresos "
-                + "ON producto.proCodigo = ingresos.proCodigo;";
+        String sql = "{call allstock()}";
 
         try {
 
             Connection con = getConnection();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
+            cst = con.prepareCall(sql);
+            rs = cst.executeQuery();
 
             while (rs.next()) {
-                filas[0] = rs.getString("proCodigo");
-                filas[1] = rs.getString("proNombre");
-                filas[2] = rs.getString("proValor");
-                filas[3] = rs.getString("venTotal");
-                filas[4] = rs.getString("venFecha");
-                filas[5] = rs.getString("ingTotal");
-                filas[6] = rs.getString("ingFecha");
+                filas[0] = rs.getString("id_pro");
+                filas[1] = rs.getString("Producto");
+                filas[2] = rs.getString("precioxund");
+                filas[3] = rs.getString("total_venta");
+                filas[4] = rs.getString("fecha_venta");
                 modeloIventario.addRow(filas);
             }
 
         } catch (SQLException e) {
             frmError verror = new frmError();
+            System.out.println(e);
             verror.setVisible(true);
             verror.setLocationRelativeTo(null);
             verror.lbErrorDuck2.setText(e.getMessage());
@@ -273,120 +386,72 @@ public class crudproductos extends CtrlConnection {
         return modeloIventario;
     }
 
-    public DefaultTableModel modeloMasVentas() {
-        String[] columnas = {"Codigo", "Total ventas", "Nombre", "Stock", "f. venta"};
+    public DefaultTableModel modeloProdAgo() {
+        String[] columnas = {"Id", "Producto", "Cantidad existente", "Precio", "Proveedor"};
         String[] filas = new String[5];
         DefaultTableModel modeloMasVentas = new DefaultTableModel(null, columnas);
 
-        PreparedStatement ps = null;
+        CallableStatement ps = null;
         ResultSet rs = null;
 
-        String sql = "SELECT producto.proCodigo, sum(ventas.venTotal) as totalVentas, producto.proNombre, "
-                + "producto.proStock, ventas.venFecha FROM isfarmacia.ventas "
-                + "INNER JOIN isfarmacia.producto ON ventas.proCodigo = producto.proCodigo "
-                + "group by producto.proCodigo order by totalVentas desc";
+        String sql = "call prodagotandose()";
 
         try {
 
             Connection con = getConnection();
-            ps = con.prepareStatement(sql);
+            ps = con.prepareCall(sql);
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                filas[0] = rs.getString("proCodigo");
-                filas[1] = rs.getString("totalVentas");
-                filas[2] = rs.getString("proNombre");
-                filas[3] = rs.getString("proStock");
-                filas[4] = rs.getString("venFecha");
+                filas[0] = rs.getString("id_pro");
+                filas[1] = rs.getString("Producto");
+                filas[2] = rs.getString("cantidad_prod");
+                filas[3] = rs.getString("precioxcaja");
+                filas[4] = rs.getString("Proveedor");
                 modeloMasVentas.addRow(filas);
             }
 
         } catch (SQLException e) {
             frmError verror = new frmError();
+            System.out.println(e);
             verror.setVisible(true);
             verror.setLocationRelativeTo(null);
-            verror.lbErrorDuck2.setText(e.getMessage());
         }
         return modeloMasVentas;
     }
     
-    public DefaultTableModel modeloIngresos() {
-        String[] columnas = {"Codigo", "Ingresos", "Nombre", "Stock", "f. ingreso"};
+    public DefaultTableModel modeloProdVenci() {
+        String[] columnas = {"Id", "Producto", "Cantidad existente", "Precio", "Fecha de vencimiento"};
         String[] filas = new String[5];
-        DefaultTableModel modeloIngresos = new DefaultTableModel(null, columnas);
+        DefaultTableModel modeloMasVentas = new DefaultTableModel(null, columnas);
 
-        PreparedStatement ps = null;
+        CallableStatement ps = null;
         ResultSet rs = null;
 
-        String sql = "SELECT producto.proCodigo, sum(ingresos.ingTotal) "
-                + "as ingresos, producto.proNombre, producto.proStock, ingresos.ingFecha "
-                + "FROM isfarmacia.ingresos INNER JOIN isfarmacia.producto "
-                + "ON ingresos.proCodigo = producto.proCodigo group by producto.proCodigo "
-                + "order by ingresos asc";
+        String sql = "call prodVenci()";
 
         try {
 
             Connection con = getConnection();
-            ps = con.prepareStatement(sql);
+            ps = con.prepareCall(sql);
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                filas[0] = rs.getString("proCodigo");
-                filas[1] = rs.getString("ingresos");
-                filas[2] = rs.getString("proNombre");
-                filas[3] = rs.getString("proStock");
-                filas[4] = rs.getString("ingFecha");
-                modeloIngresos.addRow(filas);
+                filas[0] = rs.getString("id_pro");
+                filas[1] = rs.getString("Producto");
+                filas[2] = rs.getString("cantidad_prod");
+                filas[3] = rs.getString("precioxund");
+                filas[4] = rs.getString("fecha_vencimiento");
+                modeloMasVentas.addRow(filas);
             }
 
         } catch (SQLException e) {
             frmError verror = new frmError();
+            System.out.println(e);
             verror.setVisible(true);
             verror.setLocationRelativeTo(null);
         }
-        return modeloIngresos;
+        return modeloMasVentas;
     }
-    
-    public DefaultTableModel filtromodeloInventario(String code) {
-        String[] columnas = {"Codigo", "Nombre", "Valor", "Ventas", "f. venta", "Ingresos", "F. Ingresos"};
-        String[] filas = new String[7];
-        DefaultTableModel modeloIventario = new DefaultTableModel(null, columnas);
 
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-
-        String sql = "SELECT producto.proCodigo, producto.proNombre, producto.proValor, "
-                + "ventas.venTotal, ventas.venFecha, ingresos.ingTotal, ingresos.ingFecha "
-                + "FROM isfarmacia.producto INNER JOIN isfarmacia.ventas "
-                + "ON producto.proCodigo = ventas.proCodigo INNER JOIN isfarmacia.ingresos "
-                + "ON producto.proCodigo = ingresos.proCodigo WHERE proCodigo='"+code+"'";
-
-        try {
-
-            Connection con = getConnection();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-
-            while (rs.next()) {
-                filas[0] = rs.getString("proCodigo");
-                filas[1] = rs.getString("proNombre");
-                filas[2] = rs.getString("proValor");
-                filas[3] = rs.getString("venTotal");
-                filas[4] = rs.getString("venFecha");
-                filas[5] = rs.getString("ingTotal");
-                filas[6] = rs.getString("ingFecha");
-                modeloIventario.addRow(filas);
-            }
-
-        } catch (SQLException e) {
-            frmError verror = new frmError();
-            verror.setVisible(true);
-            verror.setLocationRelativeTo(null);
-            verror.lbErrorDuck2.setText(e.getMessage());
-        }
-        return modeloIventario;
-    }
-    
 }
-
-

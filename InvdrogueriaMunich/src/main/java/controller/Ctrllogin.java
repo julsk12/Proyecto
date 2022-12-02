@@ -55,6 +55,7 @@ public class Ctrllogin extends crudlogin implements ActionListener {
                   CtrlMain cm = new CtrlMain(vistamain);
                     vistamain.setVisible(true);
                     vistalogin.dispose();
+                    vistamain.setLocationRelativeTo(null);
                 }
             }
         }

@@ -20,11 +20,12 @@ import view.JFlogin;
  * @author Julieth
  */
 public class crudlogin extends CtrlConnection {
+
     JFlogin vistalogin = new JFlogin();
     frmError vError = new frmError();
 
     public boolean verificarusuario(ModelLogin mlogin) {
-         Connection con = getConnection();
+        Connection con = getConnection();
         ResultSet rs;
         CallableStatement cst;
         String sql = "{call verificarusuario(?,?) }";
@@ -33,7 +34,7 @@ public class crudlogin extends CtrlConnection {
             cst.setString(1, mlogin.getUsuario());
             cst.setString(2, mlogin.getContrasena());
             rs = cst.executeQuery();
-            
+
             if (rs.next()) {
                 mlogin.setUsuario(rs.getString("usuario"));
                 mlogin.setContrasena(rs.getString("contrasena"));

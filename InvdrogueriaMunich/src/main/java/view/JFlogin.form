@@ -27,6 +27,9 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="jTxtUser">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="0"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>
@@ -87,6 +90,9 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="jTextPass">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="18" style="0"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>
@@ -154,13 +160,13 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SENA\Desktop\WorkSpace_SJ\Proyecto\InvdrogueriaMunich\src\main\java\img\boton.png"/>
+              <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\boton.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Por defecto"/>
+              <Color id="Default Cursor"/>
             </Property>
           </Properties>
           <Events>
@@ -206,7 +212,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SENA\Desktop\WorkSpace_SJ\Proyecto\InvdrogueriaMunich\src\main\java\img\medical-49_icon-icons.com_73913.png"/>
+              <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\medical-49_icon-icons.com_73913.png"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -237,7 +243,7 @@
         <Component class="javax.swing.JLabel" name="Lfondo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SENA\Desktop\WorkSpace_SJ\Proyecto\InvdrogueriaMunich\src\main\java\img\Medico.jpg"/>
+              <Image iconType="2" name="C:\Users\Julieth\Desktop\WorkSpace_SJ\GIT\Proyecto\InvdrogueriaMunich\src\main\java\img\Medico.jpg"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -245,7 +251,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="490" y="0" width="390" height="560"/>
+              <AbsoluteConstraints x="490" y="0" width="380" height="560"/>
             </Constraint>
           </Constraints>
         </Component>

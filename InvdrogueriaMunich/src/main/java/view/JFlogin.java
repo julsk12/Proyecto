@@ -18,6 +18,7 @@ public class JFlogin extends javax.swing.JFrame {
      */
     public JFlogin() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -46,6 +47,7 @@ public class JFlogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTxtUser.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jTxtUser.setBorder(null);
         jTxtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +65,7 @@ public class JFlogin extends javax.swing.JFrame {
         jLabel3.setText("USUARIO");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 110, 30));
 
+        jTextPass.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jTextPass.setBorder(null);
         getContentPane().add(jTextPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 440, 50));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 430, 10));
@@ -76,7 +79,7 @@ public class JFlogin extends javax.swing.JFrame {
         jPfondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jBcerrar.setForeground(new java.awt.Color(255, 255, 255));
-        jBcerrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\boton.png")); // NOI18N
+        jBcerrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\boton.png")); // NOI18N
         jBcerrar.setBorder(null);
         jBcerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBcerrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -108,15 +111,15 @@ public class JFlogin extends javax.swing.JFrame {
         });
         jPfondo.add(jBIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 418, 120, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\medical-49_icon-icons.com_73913.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\medical-49_icon-icons.com_73913.png")); // NOI18N
         jPfondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, 140, 180));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel4.setText("DROGUERIA MUNICH");
         jPfondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 250, 280, 60));
 
-        Lfondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\WorkSpace_SJ\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\Medico.jpg")); // NOI18N
-        jPfondo.add(Lfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 390, 560));
+        Lfondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Julieth\\Desktop\\WorkSpace_SJ\\GIT\\Proyecto\\InvdrogueriaMunich\\src\\main\\java\\img\\Medico.jpg")); // NOI18N
+        jPfondo.add(Lfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 380, 560));
 
         getContentPane().add(jPfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, -1));
 

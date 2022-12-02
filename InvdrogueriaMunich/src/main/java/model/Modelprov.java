@@ -53,5 +53,11 @@ public class Modelprov {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
+    
+    
+    @Override
+    public String toString() {
+        return nombre;
+    }
+    
 }
